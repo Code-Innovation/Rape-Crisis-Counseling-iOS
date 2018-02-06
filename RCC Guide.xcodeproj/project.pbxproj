@@ -40,6 +40,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		299E0254202A37BA00646CFC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				29C432972029D8D7009EC2CF /* main.m */,
+				29C432962029D8D7009EC2CF /* Info.plist */,
+				29C432A02029DF15009EC2CF /* NotoSans-Regular.ttf */,
+				29C432A12029DF15009EC2CF /* NotoSans-Bold.ttf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		29C4327C2029D8D7009EC2CF = {
 			isa = PBXGroup;
 			children = (
@@ -64,20 +75,9 @@
 				29C4328E2029D8D7009EC2CF /* Main.storyboard */,
 				29C432912029D8D7009EC2CF /* Assets.xcassets */,
 				29C432932029D8D7009EC2CF /* LaunchScreen.storyboard */,
-				29C4329F2029DED2009EC2CF /* Supporting Files */,
+				299E0254202A37BA00646CFC /* Supporting Files */,
 			);
 			path = "RCC Guide";
-			sourceTree = "<group>";
-		};
-		29C4329F2029DED2009EC2CF /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				29C432A12029DF15009EC2CF /* NotoSans-Bold.ttf */,
-				29C432A02029DF15009EC2CF /* NotoSans-Regular.ttf */,
-				29C432962029D8D7009EC2CF /* Info.plist */,
-				29C432972029D8D7009EC2CF /* main.m */,
-			);
-			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
