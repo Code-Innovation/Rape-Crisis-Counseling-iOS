@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="NotoSans-Regular.ttf">
+            <string>NotoSans</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This app provides support for survivors and their advocates to navigate emergency health care services" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m7B-uM-fXg">
+                                <rect key="frame" x="22.5" y="192" width="276" height="87.5"/>
+                                <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="big_logo" translatesAutoresizingMaskIntoConstraints="NO" id="nD4-F1-pQg">
+                                <rect key="frame" x="-0.5" y="40" width="321" height="112"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aWh-Bx-jTc">
+                                <rect key="frame" x="22" y="319.5" width="276" height="220"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fnM-7O-zMk">
+                                        <rect key="frame" x="0.0" y="160" width="276" height="60"/>
+                                        <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="16"/>
+                                        <state key="normal" title="Volunteer Advocate Training" backgroundImage="big_button"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vmv-90-Qsa">
+                                        <rect key="frame" x="0.0" y="0.0" width="276" height="60"/>
+                                        <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="16"/>
+                                        <state key="normal" title="In-Hand Resource for Survivors" backgroundImage="big_button_grey"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zdu-2k-06f">
+                                        <rect key="frame" x="0.0" y="80" width="276" height="60"/>
+                                        <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="16"/>
+                                        <state key="normal" title="In-Hand Resource for Advocates" backgroundImage="big_button_grey"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="Zdu-2k-06f" firstAttribute="leading" secondItem="aWh-Bx-jTc" secondAttribute="leading" id="7uN-EB-D17"/>
+                                    <constraint firstItem="Zdu-2k-06f" firstAttribute="top" secondItem="vmv-90-Qsa" secondAttribute="bottom" constant="20" id="BhQ-Wf-oJG"/>
+                                    <constraint firstItem="vmv-90-Qsa" firstAttribute="top" secondItem="aWh-Bx-jTc" secondAttribute="top" id="ExH-IY-tQY"/>
+                                    <constraint firstAttribute="trailing" secondItem="vmv-90-Qsa" secondAttribute="trailing" id="KQh-7P-afO"/>
+                                    <constraint firstAttribute="trailing" secondItem="fnM-7O-zMk" secondAttribute="trailing" id="QTo-7x-7AH"/>
+                                    <constraint firstItem="vmv-90-Qsa" firstAttribute="leading" secondItem="aWh-Bx-jTc" secondAttribute="leading" id="WdF-jH-H47"/>
+                                    <constraint firstAttribute="trailing" secondItem="Zdu-2k-06f" secondAttribute="trailing" id="ph6-Ks-ic2"/>
+                                    <constraint firstItem="fnM-7O-zMk" firstAttribute="top" secondItem="Zdu-2k-06f" secondAttribute="bottom" constant="20" id="tzy-d1-JLM"/>
+                                    <constraint firstAttribute="bottom" secondItem="fnM-7O-zMk" secondAttribute="bottom" id="uCG-hd-hgU"/>
+                                    <constraint firstItem="fnM-7O-zMk" firstAttribute="leading" secondItem="aWh-Bx-jTc" secondAttribute="leading" id="zw1-tr-Ubo"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="aWh-Bx-jTc" firstAttribute="trailing" secondItem="m7B-uM-fXg" secondAttribute="trailing" id="52Q-0N-NFP"/>
+                            <constraint firstItem="m7B-uM-fXg" firstAttribute="leading" secondItem="aWh-Bx-jTc" secondAttribute="leading" id="Y3Y-US-dxi"/>
+                            <constraint firstItem="m7B-uM-fXg" firstAttribute="top" secondItem="nD4-F1-pQg" secondAttribute="bottom" constant="40" id="dao-jq-bzm"/>
+                            <constraint firstItem="nD4-F1-pQg" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="e2Y-Vo-HGk"/>
+                            <constraint firstItem="aWh-Bx-jTc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="otQ-la-3pt"/>
+                            <constraint firstItem="nD4-F1-pQg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rMt-ee-GQH"/>
+                            <constraint firstItem="aWh-Bx-jTc" firstAttribute="top" secondItem="m7B-uM-fXg" secondAttribute="bottom" constant="40" id="xyV-uT-vKY"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="236" y="98.50074962518741"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="big_button" width="276" height="60"/>
+        <image name="big_button_grey" width="276" height="60"/>
+        <image name="big_logo" width="321" height="112"/>
+    </resources>
+</document>
