@@ -7,26 +7,45 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1BBC40E067AC8B82A478E32F /* Pods_RCC_Guide.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 736C0DADB86A380D889AC054 /* Pods_RCC_Guide.framework */; };
+		29C275DE202B19D70054B652 /* Navigations.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29C275DD202B19D70054B652 /* Navigations.storyboard */; };
+		29C275E3202B1C910054B652 /* RCCMainScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C275E2202B1C910054B652 /* RCCMainScreenViewController.m */; };
+		29C275E7202B1CCC0054B652 /* RCCContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C275E6202B1CCC0054B652 /* RCCContentViewController.m */; };
+		29C275EB202B1D530054B652 /* RCCContentListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C275EA202B1D530054B652 /* RCCContentListViewController.m */; };
+		29C275EF202B1D840054B652 /* RCCAppMenuListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C275EE202B1D840054B652 /* RCCAppMenuListViewController.m */; };
+		29C275F3202B1E7E0054B652 /* RCCHomeContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C275F2202B1E7E0054B652 /* RCCHomeContentViewController.m */; };
 		29C4328A2029D8D7009EC2CF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C432892029D8D7009EC2CF /* AppDelegate.m */; };
-		29C432902029D8D7009EC2CF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29C4328E2029D8D7009EC2CF /* Main.storyboard */; };
+		29C432902029D8D7009EC2CF /* Contents.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29C4328E2029D8D7009EC2CF /* Contents.storyboard */; };
 		29C432922029D8D7009EC2CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29C432912029D8D7009EC2CF /* Assets.xcassets */; };
-		29C432952029D8D7009EC2CF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29C432932029D8D7009EC2CF /* LaunchScreen.storyboard */; };
 		29C432982029D8D7009EC2CF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C432972029D8D7009EC2CF /* main.m */; };
 		29C432A22029DF16009EC2CF /* NotoSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 29C432A02029DF15009EC2CF /* NotoSans-Regular.ttf */; };
 		29C432A32029DF16009EC2CF /* NotoSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 29C432A12029DF15009EC2CF /* NotoSans-Bold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		29C275DD202B19D70054B652 /* Navigations.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Navigations.storyboard; sourceTree = "<group>"; };
+		29C275E1202B1C910054B652 /* RCCMainScreenViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCCMainScreenViewController.h; sourceTree = "<group>"; };
+		29C275E2202B1C910054B652 /* RCCMainScreenViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RCCMainScreenViewController.m; sourceTree = "<group>"; };
+		29C275E5202B1CCC0054B652 /* RCCContentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCCContentViewController.h; sourceTree = "<group>"; };
+		29C275E6202B1CCC0054B652 /* RCCContentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RCCContentViewController.m; sourceTree = "<group>"; };
+		29C275E9202B1D530054B652 /* RCCContentListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCCContentListViewController.h; sourceTree = "<group>"; };
+		29C275EA202B1D530054B652 /* RCCContentListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RCCContentListViewController.m; sourceTree = "<group>"; };
+		29C275ED202B1D840054B652 /* RCCAppMenuListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCCAppMenuListViewController.h; sourceTree = "<group>"; };
+		29C275EE202B1D840054B652 /* RCCAppMenuListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RCCAppMenuListViewController.m; sourceTree = "<group>"; };
+		29C275F1202B1E7E0054B652 /* RCCHomeContentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCCHomeContentViewController.h; sourceTree = "<group>"; };
+		29C275F2202B1E7E0054B652 /* RCCHomeContentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RCCHomeContentViewController.m; sourceTree = "<group>"; };
 		29C432852029D8D7009EC2CF /* RCC Guide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RCC Guide.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		29C432882029D8D7009EC2CF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		29C432892029D8D7009EC2CF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		29C4328F2029D8D7009EC2CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		29C4328F2029D8D7009EC2CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Contents.storyboard; sourceTree = "<group>"; };
 		29C432912029D8D7009EC2CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		29C432942029D8D7009EC2CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		29C432962029D8D7009EC2CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		29C432972029D8D7009EC2CF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		29C432A02029DF15009EC2CF /* NotoSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-Regular.ttf"; sourceTree = "<group>"; };
 		29C432A12029DF15009EC2CF /* NotoSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-Bold.ttf"; sourceTree = "<group>"; };
+		736C0DADB86A380D889AC054 /* Pods_RCC_Guide.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RCC_Guide.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		76862CEAC2471AF4591F3478 /* Pods-RCC Guide.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RCC Guide.release.xcconfig"; path = "Pods/Target Support Files/Pods-RCC Guide/Pods-RCC Guide.release.xcconfig"; sourceTree = "<group>"; };
+		F19B7878D4EE03C578E83A34 /* Pods-RCC Guide.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RCC Guide.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RCC Guide/Pods-RCC Guide.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -34,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1BBC40E067AC8B82A478E32F /* Pods_RCC_Guide.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,11 +71,86 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		29C275DB202B0BC10054B652 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				29C275F0202B1D990054B652 /* HomeContentViewController */,
+				29C275EC202B1D5F0054B652 /* AppMenuListViewController */,
+				29C275E8202B1D1A0054B652 /* ContentListViewController */,
+				29C275E4202B1C990054B652 /* ContentViewController */,
+				29C275E0202B1B000054B652 /* MainScreenViewController */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		29C275DF202B19DE0054B652 /* StoryBoards */ = {
+			isa = PBXGroup;
+			children = (
+				29C275DD202B19D70054B652 /* Navigations.storyboard */,
+				29C4328E2029D8D7009EC2CF /* Contents.storyboard */,
+			);
+			name = StoryBoards;
+			sourceTree = "<group>";
+		};
+		29C275E0202B1B000054B652 /* MainScreenViewController */ = {
+			isa = PBXGroup;
+			children = (
+				29C275E1202B1C910054B652 /* RCCMainScreenViewController.h */,
+				29C275E2202B1C910054B652 /* RCCMainScreenViewController.m */,
+			);
+			name = MainScreenViewController;
+			sourceTree = "<group>";
+		};
+		29C275E4202B1C990054B652 /* ContentViewController */ = {
+			isa = PBXGroup;
+			children = (
+				29C275E5202B1CCC0054B652 /* RCCContentViewController.h */,
+				29C275E6202B1CCC0054B652 /* RCCContentViewController.m */,
+			);
+			name = ContentViewController;
+			sourceTree = "<group>";
+		};
+		29C275E8202B1D1A0054B652 /* ContentListViewController */ = {
+			isa = PBXGroup;
+			children = (
+				29C275E9202B1D530054B652 /* RCCContentListViewController.h */,
+				29C275EA202B1D530054B652 /* RCCContentListViewController.m */,
+			);
+			name = ContentListViewController;
+			sourceTree = "<group>";
+		};
+		29C275EC202B1D5F0054B652 /* AppMenuListViewController */ = {
+			isa = PBXGroup;
+			children = (
+				29C275ED202B1D840054B652 /* RCCAppMenuListViewController.h */,
+				29C275EE202B1D840054B652 /* RCCAppMenuListViewController.m */,
+			);
+			name = AppMenuListViewController;
+			sourceTree = "<group>";
+		};
+		29C275F0202B1D990054B652 /* HomeContentViewController */ = {
+			isa = PBXGroup;
+			children = (
+				29C275F1202B1E7E0054B652 /* RCCHomeContentViewController.h */,
+				29C275F2202B1E7E0054B652 /* RCCHomeContentViewController.m */,
+			);
+			name = HomeContentViewController;
+			sourceTree = "<group>";
+		};
+		29C275F4202B25990054B652 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
 		29C4327C2029D8D7009EC2CF = {
 			isa = PBXGroup;
 			children = (
 				29C432872029D8D7009EC2CF /* RCC Guide */,
 				29C432862029D8D7009EC2CF /* Products */,
+				2D1838E038A14E2A33D6663F /* Pods */,
+				7FA36203640B53C9C6BB3E63 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -70,14 +165,32 @@
 		29C432872029D8D7009EC2CF /* RCC Guide */ = {
 			isa = PBXGroup;
 			children = (
+				29C275F4202B25990054B652 /* Categories */,
+				29C275DF202B19DE0054B652 /* StoryBoards */,
+				29C275DB202B0BC10054B652 /* ViewControllers */,
 				29C432882029D8D7009EC2CF /* AppDelegate.h */,
 				29C432892029D8D7009EC2CF /* AppDelegate.m */,
-				29C4328E2029D8D7009EC2CF /* Main.storyboard */,
 				29C432912029D8D7009EC2CF /* Assets.xcassets */,
-				29C432932029D8D7009EC2CF /* LaunchScreen.storyboard */,
 				299E0254202A37BA00646CFC /* Supporting Files */,
 			);
 			path = "RCC Guide";
+			sourceTree = "<group>";
+		};
+		2D1838E038A14E2A33D6663F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F19B7878D4EE03C578E83A34 /* Pods-RCC Guide.debug.xcconfig */,
+				76862CEAC2471AF4591F3478 /* Pods-RCC Guide.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		7FA36203640B53C9C6BB3E63 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				736C0DADB86A380D889AC054 /* Pods_RCC_Guide.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -87,9 +200,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 29C4329B2029D8D7009EC2CF /* Build configuration list for PBXNativeTarget "RCC Guide" */;
 			buildPhases = (
+				2937C93C25D3C7DB678A642D /* [CP] Check Pods Manifest.lock */,
 				29C432812029D8D7009EC2CF /* Sources */,
 				29C432822029D8D7009EC2CF /* Frameworks */,
 				29C432832029D8D7009EC2CF /* Resources */,
+				2497E1D80C1B59DD4B078D2A /* [CP] Embed Pods Frameworks */,
+				F559F596816081901283A738 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -140,42 +256,87 @@
 			buildActionMask = 2147483647;
 			files = (
 				29C432A22029DF16009EC2CF /* NotoSans-Regular.ttf in Resources */,
-				29C432952029D8D7009EC2CF /* LaunchScreen.storyboard in Resources */,
 				29C432922029D8D7009EC2CF /* Assets.xcassets in Resources */,
 				29C432A32029DF16009EC2CF /* NotoSans-Bold.ttf in Resources */,
-				29C432902029D8D7009EC2CF /* Main.storyboard in Resources */,
+				29C275DE202B19D70054B652 /* Navigations.storyboard in Resources */,
+				29C432902029D8D7009EC2CF /* Contents.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2497E1D80C1B59DD4B078D2A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RCC Guide/Pods-RCC Guide-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2937C93C25D3C7DB678A642D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F559F596816081901283A738 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RCC Guide/Pods-RCC Guide-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		29C432812029D8D7009EC2CF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29C275EF202B1D840054B652 /* RCCAppMenuListViewController.m in Sources */,
 				29C432982029D8D7009EC2CF /* main.m in Sources */,
+				29C275E3202B1C910054B652 /* RCCMainScreenViewController.m in Sources */,
 				29C4328A2029D8D7009EC2CF /* AppDelegate.m in Sources */,
+				29C275F3202B1E7E0054B652 /* RCCHomeContentViewController.m in Sources */,
+				29C275EB202B1D530054B652 /* RCCContentListViewController.m in Sources */,
+				29C275E7202B1CCC0054B652 /* RCCContentViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		29C4328E2029D8D7009EC2CF /* Main.storyboard */ = {
+		29C4328E2029D8D7009EC2CF /* Contents.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				29C4328F2029D8D7009EC2CF /* Base */,
 			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		29C432932029D8D7009EC2CF /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				29C432942029D8D7009EC2CF /* Base */,
-			);
-			name = LaunchScreen.storyboard;
+			name = Contents.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -287,27 +448,35 @@
 		};
 		29C4329C2029D8D7009EC2CF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F19B7878D4EE03C578E83A34 /* Pods-RCC Guide.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SUAWT97CSE;
 				INFOPLIST_FILE = "RCC Guide/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Sibers.RCC-Guide";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		29C4329D2029D8D7009EC2CF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 76862CEAC2471AF4591F3478 /* Pods-RCC Guide.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SUAWT97CSE;
 				INFOPLIST_FILE = "RCC Guide/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Sibers.RCC-Guide";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
