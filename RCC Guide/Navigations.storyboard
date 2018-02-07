@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="SAY-41-99b">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PsG-Ed-W3c">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -15,22 +15,6 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Navigation Controller-->
-        <scene sceneID="3Ar-57-IGz">
-            <objects>
-                <navigationController id="SAY-41-99b" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="pzl-f4-oLC">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="PsG-Ed-W3c" kind="relationship" relationship="rootViewController" id="f1U-D9-n51"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="OEg-ab-J4f" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-897" y="-323"/>
-        </scene>
         <!--Side Menu Controller-->
         <scene sceneID="oOe-Wu-Nsv">
             <objects>
@@ -38,42 +22,48 @@
                     <view key="view" contentMode="scaleToFill" id="2Oc-OO-Zcd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tCo-1e-BDO">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                                <connections>
-                                    <segue destination="ZSM-a7-kaj" kind="embed" id="eRm-Bv-CJ7"/>
-                                </connections>
-                            </containerView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="3nh-m8-y1n" firstAttribute="bottom" secondItem="tCo-1e-BDO" secondAttribute="bottom" id="OtV-gp-JXy"/>
-                            <constraint firstItem="tCo-1e-BDO" firstAttribute="top" secondItem="3nh-m8-y1n" secondAttribute="top" id="U7W-mC-i6A"/>
-                            <constraint firstItem="3nh-m8-y1n" firstAttribute="trailing" secondItem="tCo-1e-BDO" secondAttribute="trailing" id="di9-aT-WMC"/>
-                            <constraint firstItem="tCo-1e-BDO" firstAttribute="leading" secondItem="3nh-m8-y1n" secondAttribute="leading" id="rSF-rV-i7B"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="3nh-m8-y1n"/>
                     </view>
                     <navigationItem key="navigationItem" id="bcb-u6-3Mh"/>
+                    <connections>
+                        <segue destination="Oqc-Mf-bEn" kind="custom" identifier="root" customClass="LGSideMenuSegue" id="aMB-cR-6zV"/>
+                        <segue destination="Wib-7Q-tgu" kind="custom" identifier="left" customClass="LGSideMenuSegue" id="Bkr-wF-O3A"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m1N-uz-tzS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-177" y="-323"/>
+            <point key="canvasLocation" x="-799" y="-437"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="x9Z-KN-5ZV">
+            <objects>
+                <navigationController id="Oqc-Mf-bEn" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gI1-5M-eBl">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="ZSM-a7-kaj" kind="relationship" relationship="rootViewController" id="wIS-Na-n41"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h8D-16-YZW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-110" y="-438"/>
         </scene>
         <!--Main Screen View Controller-->
         <scene sceneID="TbQ-gj-7Ro">
             <objects>
                 <viewController id="ZSM-a7-kaj" customClass="RCCMainScreenViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HxX-vi-gtn">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xh0-ep-a8E">
-                                <rect key="frame" x="0.0" y="20" width="375" height="583"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4KW-3b-3nd">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="583"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This app provides support for survivors and their advocates to navigate emergency health care services" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dh5-bc-gg8">
                                                 <rect key="frame" x="30" y="178" width="315" height="65.5"/>
@@ -94,7 +84,7 @@
                                                         <state key="disabled" backgroundImage="grey_button"/>
                                                         <state key="highlighted" backgroundImage="green_button_press"/>
                                                         <connections>
-                                                            <segue destination="W89-al-YKx" kind="show" id="IK1-WC-3zg"/>
+                                                            <segue destination="W89-al-YKx" kind="showDetail" animates="NO" action="showViewController:sender:" id="IK1-WC-3zg"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="usv-sj-CBi">
@@ -165,7 +155,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uQS-VH-QZj" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="686" y="-382"/>
+            <point key="canvasLocation" x="682" y="-438"/>
         </scene>
         <!--RCCHomeContentViewController-->
         <scene sceneID="TpR-BR-SJd">
@@ -188,7 +178,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PQ5-D1-KO6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1494" y="-354"/>
+            <point key="canvasLocation" x="-86" y="-1413"/>
         </scene>
     </scenes>
     <resources>

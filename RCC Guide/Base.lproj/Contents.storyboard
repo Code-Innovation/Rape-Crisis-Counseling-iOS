@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -23,11 +24,11 @@
             <objects>
                 <viewController id="jMZ-Gq-NNx" customClass="RCCContentViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tFU-SS-950">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XVj-R2-IM4">
-                                <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xk4-fp-oXm">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
@@ -43,6 +44,9 @@
                                                 <rect key="frame" x="30" y="310" width="260" height="69"/>
                                                 <state key="normal" backgroundImage="green_button"/>
                                                 <state key="highlighted" backgroundImage="green_button_press"/>
+                                                <connections>
+                                                    <action selector="showLeftViewAnimated:" destination="jMZ-Gq-NNx" eventType="touchUpInside" id="eJa-eH-QsL"/>
+                                                </connections>
                                             </button>
                                             <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pbZ-ha-juG">
                                                 <rect key="frame" x="30" y="309.5" width="260" height="69"/>
@@ -102,40 +106,23 @@
                                     <constraint firstAttribute="trailing" secondItem="xk4-fp-oXm" secondAttribute="trailing" id="z6S-G8-Rr7"/>
                                 </constraints>
                             </scrollView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SyB-tK-CJp">
-                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
-                                <items>
-                                    <barButtonItem style="plain" id="S5E-Pz-gag">
-                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="fgx-7Y-J20">
-                                            <rect key="frame" x="16" y="2" width="40" height="40"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <state key="normal" image="dropdown_icon"/>
-                                        </button>
-                                    </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="RLU-e1-8Ev"/>
-                                </items>
-                                <color key="barTintColor" red="0.30588235294117649" green="0.75294117647058822" blue="0.68627450980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="SyB-tK-CJp" firstAttribute="leading" secondItem="4V6-wX-NqP" secondAttribute="leading" id="8of-gb-1Z2"/>
                             <constraint firstItem="4V6-wX-NqP" firstAttribute="bottom" secondItem="XVj-R2-IM4" secondAttribute="bottom" id="NKk-i8-jAT"/>
-                            <constraint firstItem="XVj-R2-IM4" firstAttribute="top" secondItem="SyB-tK-CJp" secondAttribute="bottom" id="NZC-KB-bZ4"/>
+                            <constraint firstItem="XVj-R2-IM4" firstAttribute="top" secondItem="4V6-wX-NqP" secondAttribute="top" id="NnD-N4-z4s"/>
                             <constraint firstItem="XVj-R2-IM4" firstAttribute="leading" secondItem="4V6-wX-NqP" secondAttribute="leading" id="Pb0-zv-lMz"/>
-                            <constraint firstItem="SyB-tK-CJp" firstAttribute="trailing" secondItem="4V6-wX-NqP" secondAttribute="trailing" id="SpY-93-AE2"/>
-                            <constraint firstItem="SyB-tK-CJp" firstAttribute="top" secondItem="4V6-wX-NqP" secondAttribute="top" id="bGp-yW-uhP"/>
                             <constraint firstItem="4V6-wX-NqP" firstAttribute="trailing" secondItem="XVj-R2-IM4" secondAttribute="trailing" id="rQN-47-vmM"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="4V6-wX-NqP"/>
                     </view>
                     <connections>
-                        <segue destination="ZFB-cw-Juh" kind="custom" identifier="left" customClass="LGSideMenuSegue" id="fYR-Oe-nmd"/>
+                        <segue destination="ZFB-cw-Juh" kind="custom" identifier="left" customClass="LGSideMenuSegue" id="BeM-vd-UT0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ci6-7x-yvk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2081" y="-223"/>
+            <point key="canvasLocation" x="1924" y="-535"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="aFf-Z6-JoG">
@@ -162,7 +149,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DrB-Vq-Wgo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2966" y="-193"/>
+            <point key="canvasLocation" x="2850" y="-374"/>
         </scene>
         <!--Home Content View Controller-->
         <scene sceneID="44R-pw-lfU">
@@ -192,7 +179,7 @@
                                                         <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="17"/>
                                                         <state key="normal" title="Important: Read this First" backgroundImage="orange_button_small"/>
                                                         <connections>
-                                                            <segue destination="jMZ-Gq-NNx" kind="show" id="BTV-Ci-d6P"/>
+                                                            <segue destination="m7U-kF-cGm" kind="show" id="VOx-00-ifK"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -248,7 +235,56 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VzM-I6-fgG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1063" y="-222"/>
+            <point key="canvasLocation" x="491" y="-230"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="ztX-TX-ztp">
+            <objects>
+                <viewController id="m7U-kF-cGm" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WXj-4j-kIW">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O75-ux-AKx">
+                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <items>
+                                    <barButtonItem style="plain" id="CbO-E3-GC0">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="5eC-kG-G4O">
+                                            <rect key="frame" x="16" y="2" width="40" height="40"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" image="dropdown_icon"/>
+                                            <connections>
+                                                <action selector="showLeftViewAnimated:" destination="m7U-kF-cGm" eventType="touchUpInside" id="Ho9-av-7m7"/>
+                                            </connections>
+                                        </button>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="kBA-bE-h9E"/>
+                                </items>
+                                <color key="barTintColor" red="0.30588235289999999" green="0.75294117650000003" blue="0.68627450980000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </toolbar>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bvi-5R-fcp">
+                                <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                                <connections>
+                                    <segue destination="jMZ-Gq-NNx" kind="embed" id="24c-Ln-hZQ"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="O75-ux-AKx" firstAttribute="top" secondItem="WXj-4j-kIW" secondAttribute="topMargin" id="Hgq-KY-8HO"/>
+                            <constraint firstItem="Dar-GE-QnG" firstAttribute="trailing" secondItem="Bvi-5R-fcp" secondAttribute="trailing" id="T49-kH-241"/>
+                            <constraint firstItem="O75-ux-AKx" firstAttribute="trailing" secondItem="Dar-GE-QnG" secondAttribute="trailing" id="Xet-Ki-oiH"/>
+                            <constraint firstItem="Dar-GE-QnG" firstAttribute="bottom" secondItem="Bvi-5R-fcp" secondAttribute="bottom" id="bGX-xd-qRr"/>
+                            <constraint firstItem="Bvi-5R-fcp" firstAttribute="top" secondItem="O75-ux-AKx" secondAttribute="bottom" id="gZ1-jC-UY6"/>
+                            <constraint firstItem="Bvi-5R-fcp" firstAttribute="leading" secondItem="Dar-GE-QnG" secondAttribute="leading" id="p8b-Dj-gKf"/>
+                            <constraint firstItem="O75-ux-AKx" firstAttribute="leading" secondItem="Dar-GE-QnG" secondAttribute="leading" id="yxq-dq-rMu"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Dar-GE-QnG"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DWl-1J-TbN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1029" y="-326"/>
         </scene>
     </scenes>
     <resources>

@@ -71,13 +71,38 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		299E0255202B7ACB00646CFC /* ContentViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				299E0257202B7B2C00646CFC /* ContentContainerViewController */,
+				29C275F0202B1D990054B652 /* RootContentViewController */,
+				299E0256202B7AF500646CFC /* ContentViewController */,
+				29C275E8202B1D1A0054B652 /* ContentListViewController */,
+			);
+			name = ContentViewControllers;
+			sourceTree = "<group>";
+		};
+		299E0256202B7AF500646CFC /* ContentViewController */ = {
+			isa = PBXGroup;
+			children = (
+				29C275E5202B1CCC0054B652 /* RCCContentViewController.h */,
+				29C275E6202B1CCC0054B652 /* RCCContentViewController.m */,
+			);
+			name = ContentViewController;
+			sourceTree = "<group>";
+		};
+		299E0257202B7B2C00646CFC /* ContentContainerViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ContentContainerViewController;
+			sourceTree = "<group>";
+		};
 		29C275DB202B0BC10054B652 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				29C275F0202B1D990054B652 /* HomeContentViewController */,
+				299E0255202B7ACB00646CFC /* ContentViewControllers */,
 				29C275EC202B1D5F0054B652 /* AppMenuListViewController */,
-				29C275E8202B1D1A0054B652 /* ContentListViewController */,
-				29C275E4202B1C990054B652 /* ContentViewController */,
 				29C275E0202B1B000054B652 /* MainScreenViewController */,
 			);
 			name = ViewControllers;
@@ -101,15 +126,6 @@
 			name = MainScreenViewController;
 			sourceTree = "<group>";
 		};
-		29C275E4202B1C990054B652 /* ContentViewController */ = {
-			isa = PBXGroup;
-			children = (
-				29C275E5202B1CCC0054B652 /* RCCContentViewController.h */,
-				29C275E6202B1CCC0054B652 /* RCCContentViewController.m */,
-			);
-			name = ContentViewController;
-			sourceTree = "<group>";
-		};
 		29C275E8202B1D1A0054B652 /* ContentListViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -128,13 +144,13 @@
 			name = AppMenuListViewController;
 			sourceTree = "<group>";
 		};
-		29C275F0202B1D990054B652 /* HomeContentViewController */ = {
+		29C275F0202B1D990054B652 /* RootContentViewController */ = {
 			isa = PBXGroup;
 			children = (
 				29C275F1202B1E7E0054B652 /* RCCHomeContentViewController.h */,
 				29C275F2202B1E7E0054B652 /* RCCHomeContentViewController.m */,
 			);
-			name = HomeContentViewController;
+			name = RootContentViewController;
 			sourceTree = "<group>";
 		};
 		29C275F4202B25990054B652 /* Categories */ = {
