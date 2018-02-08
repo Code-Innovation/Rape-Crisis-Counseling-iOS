@@ -16,8 +16,10 @@
 
 - (void)customizeUI
 {
-    [UINavigationBar appearance].tintColor = [UIColor redColor];
-    [UINavigationBar appearance].translucent = YES;
+    [[UINavigationBar appearance] setTitleTextAttributes:@{NSFontAttributeName : [UIFont fontWithName:@"NotoSans"
+                                                                                                size:20],
+                                                           NSForegroundColorAttributeName : [UIColor whiteColor]
+                                                           }];
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {

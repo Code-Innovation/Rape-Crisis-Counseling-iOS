@@ -1,18 +1,18 @@
 //
-//  RCCAppMenuListViewController.m
+//  RCCContentMainMenuViewController.m
 //  RCC Guide
 //
-//  Created by Alexandr Afonin on 2/7/18.
+//  Created by Alexandr Afonin on 2/8/18.
 //  Copyright © 2018 Afonin Alexandr. All rights reserved.
 //
 
-#import "RCCAppMenuListViewController.h"
+#import "RCCContentMainMenuViewController.h"
 
-@interface RCCAppMenuListViewController ()
+@interface RCCContentMainMenuViewController ()
 
 @end
 
-@implementation RCCAppMenuListViewController
+@implementation RCCContentMainMenuViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

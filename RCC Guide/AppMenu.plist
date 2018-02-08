@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<array>
+		<dict>
+			<key>enabled</key>
+			<false/>
+			<key>title</key>
+			<string>In-Hand Resource for Advocates</string>
+			<key>action</key>
+			<string>advocates_resource</string>
+		</dict>
+		<dict>
+			<key>enabled</key>
+			<false/>
+			<key>title</key>
+			<string>In-Hand Resource for Survivours</string>
+			<key>action</key>
+			<string>survivours_resource</string>
+		</dict>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>title</key>
+			<string>Volunteer Advocate Training</string>
+			<key>action</key>
+			<string>advocate_training</string>
+		</dict>
+	</array>
+	<array>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>title</key>
+			<string>Resources</string>
+			<key>action</key>
+			<string>resources</string>
+		</dict>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>title</key>
+			<string>About</string>
+			<key>action</key>
+			<string>about</string>
+		</dict>
+		<dict>
+			<key>enabled</key>
+			<false/>
+			<key>title</key>
+			<string>Settings</string>
+			<key>action</key>
+			<string>settings</string>
+		</dict>
+	</array>
+	<array>
+		<dict>
+			<key>enabled</key>
+			<false/>
+			<key>title</key>
+			<string>Privavy Policy</string>
+			<key>action</key>
+			<string>privacy</string>
+		</dict>
+		<dict>
+			<key>enabled</key>
+			<false/>
+			<key>title</key>
+			<string>Disclaimer</string>
+			<key>action</key>
+			<string>disclaimer</string>
+		</dict>
+		<dict>
+			<key>enabled</key>
+			<false/>
+			<key>title</key>
+			<string>Terms of Use</string>
+			<key>action</key>
+			<string>terms</string>
+		</dict>
+	</array>
+</array>
+</plist>

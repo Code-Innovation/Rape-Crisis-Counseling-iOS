@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RCCBaseViewController.h"
 
-@interface RCCMainScreenViewController : UIViewController
+@interface RCCMainScreenViewController : RCCBaseViewController
 
 @end

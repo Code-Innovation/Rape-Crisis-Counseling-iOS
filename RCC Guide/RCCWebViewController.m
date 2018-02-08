@@ -1,18 +1,18 @@
 //
-//  RCCHomeContentViewController.m
+//  RCCWebViewController.m
 //  RCC Guide
 //
-//  Created by Alexandr Afonin on 2/7/18.
+//  Created by Alexandr Afonin on 2/8/18.
 //  Copyright © 2018 Afonin Alexandr. All rights reserved.
 //
 
-#import "RCCHomeContentViewController.h"
+#import "RCCWebViewController.h"
 
-@interface RCCHomeContentViewController ()
+@interface RCCWebViewController ()
 
 @end
 
-@implementation RCCHomeContentViewController
+@implementation RCCWebViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

@@ -8,32 +8,37 @@
 
 /* Begin PBXBuildFile section */
 		1BBC40E067AC8B82A478E32F /* Pods_RCC_Guide.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 736C0DADB86A380D889AC054 /* Pods_RCC_Guide.framework */; };
-		29C275DE202B19D70054B652 /* Navigations.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29C275DD202B19D70054B652 /* Navigations.storyboard */; };
+		29C275DE202B19D70054B652 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29C275DD202B19D70054B652 /* Main.storyboard */; };
 		29C275E3202B1C910054B652 /* RCCMainScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C275E2202B1C910054B652 /* RCCMainScreenViewController.m */; };
 		29C275E7202B1CCC0054B652 /* RCCContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C275E6202B1CCC0054B652 /* RCCContentViewController.m */; };
 		29C275EB202B1D530054B652 /* RCCContentListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C275EA202B1D530054B652 /* RCCContentListViewController.m */; };
-		29C275EF202B1D840054B652 /* RCCAppMenuListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C275EE202B1D840054B652 /* RCCAppMenuListViewController.m */; };
-		29C275F3202B1E7E0054B652 /* RCCHomeContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C275F2202B1E7E0054B652 /* RCCHomeContentViewController.m */; };
+		29C275EF202B1D840054B652 /* RCCAppMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C275EE202B1D840054B652 /* RCCAppMenuViewController.m */; };
 		29C4328A2029D8D7009EC2CF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C432892029D8D7009EC2CF /* AppDelegate.m */; };
 		29C432902029D8D7009EC2CF /* Contents.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29C4328E2029D8D7009EC2CF /* Contents.storyboard */; };
 		29C432922029D8D7009EC2CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29C432912029D8D7009EC2CF /* Assets.xcassets */; };
 		29C432982029D8D7009EC2CF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C432972029D8D7009EC2CF /* main.m */; };
 		29C432A22029DF16009EC2CF /* NotoSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 29C432A02029DF15009EC2CF /* NotoSans-Regular.ttf */; };
 		29C432A32029DF16009EC2CF /* NotoSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 29C432A12029DF15009EC2CF /* NotoSans-Bold.ttf */; };
+		29C57BBC202C101500BEF614 /* RCCContentMainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C57BBB202C101500BEF614 /* RCCContentMainMenuViewController.m */; };
+		29C57BC0202C1BAE00BEF614 /* RCCAppMenuDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C57BBF202C1BAE00BEF614 /* RCCAppMenuDataSource.m */; };
+		29C57BC3202C1C8700BEF614 /* RCCAppMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C57BC2202C1C8700BEF614 /* RCCAppMenuItem.m */; };
+		29C57BC5202C1FCD00BEF614 /* AppMenu.plist in Resources */ = {isa = PBXBuildFile; fileRef = 29C57BC4202C1FCD00BEF614 /* AppMenu.plist */; };
+		29C57BC8202C31B700BEF614 /* UIColor+RCCAppColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C57BC7202C31B700BEF614 /* UIColor+RCCAppColor.m */; };
+		29C57BCC202C370600BEF614 /* RCCBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C57BCB202C370500BEF614 /* RCCBaseViewController.m */; };
+		29C57BCF202C399100BEF614 /* RCCMainSideMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C57BCE202C399100BEF614 /* RCCMainSideMenuViewController.m */; };
+		29C57BF2202C82DE00BEF614 /* RCCWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C57BF1202C82DE00BEF614 /* RCCWebViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		29C275DD202B19D70054B652 /* Navigations.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Navigations.storyboard; sourceTree = "<group>"; };
+		29C275DD202B19D70054B652 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		29C275E1202B1C910054B652 /* RCCMainScreenViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCCMainScreenViewController.h; sourceTree = "<group>"; };
 		29C275E2202B1C910054B652 /* RCCMainScreenViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RCCMainScreenViewController.m; sourceTree = "<group>"; };
 		29C275E5202B1CCC0054B652 /* RCCContentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCCContentViewController.h; sourceTree = "<group>"; };
 		29C275E6202B1CCC0054B652 /* RCCContentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RCCContentViewController.m; sourceTree = "<group>"; };
 		29C275E9202B1D530054B652 /* RCCContentListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCCContentListViewController.h; sourceTree = "<group>"; };
 		29C275EA202B1D530054B652 /* RCCContentListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RCCContentListViewController.m; sourceTree = "<group>"; };
-		29C275ED202B1D840054B652 /* RCCAppMenuListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCCAppMenuListViewController.h; sourceTree = "<group>"; };
-		29C275EE202B1D840054B652 /* RCCAppMenuListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RCCAppMenuListViewController.m; sourceTree = "<group>"; };
-		29C275F1202B1E7E0054B652 /* RCCHomeContentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCCHomeContentViewController.h; sourceTree = "<group>"; };
-		29C275F2202B1E7E0054B652 /* RCCHomeContentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RCCHomeContentViewController.m; sourceTree = "<group>"; };
+		29C275ED202B1D840054B652 /* RCCAppMenuViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCCAppMenuViewController.h; sourceTree = "<group>"; };
+		29C275EE202B1D840054B652 /* RCCAppMenuViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RCCAppMenuViewController.m; sourceTree = "<group>"; };
 		29C432852029D8D7009EC2CF /* RCC Guide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RCC Guide.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		29C432882029D8D7009EC2CF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		29C432892029D8D7009EC2CF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -43,6 +48,22 @@
 		29C432972029D8D7009EC2CF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		29C432A02029DF15009EC2CF /* NotoSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-Regular.ttf"; sourceTree = "<group>"; };
 		29C432A12029DF15009EC2CF /* NotoSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-Bold.ttf"; sourceTree = "<group>"; };
+		29C57BBA202C101500BEF614 /* RCCContentMainMenuViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCCContentMainMenuViewController.h; sourceTree = "<group>"; };
+		29C57BBB202C101500BEF614 /* RCCContentMainMenuViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RCCContentMainMenuViewController.m; sourceTree = "<group>"; };
+		29C57BBE202C1BAE00BEF614 /* RCCAppMenuDataSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCCAppMenuDataSource.h; sourceTree = "<group>"; };
+		29C57BBF202C1BAE00BEF614 /* RCCAppMenuDataSource.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RCCAppMenuDataSource.m; sourceTree = "<group>"; };
+		29C57BC1202C1C8700BEF614 /* RCCAppMenuItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCCAppMenuItem.h; sourceTree = "<group>"; };
+		29C57BC2202C1C8700BEF614 /* RCCAppMenuItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RCCAppMenuItem.m; sourceTree = "<group>"; };
+		29C57BC4202C1FCD00BEF614 /* AppMenu.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = AppMenu.plist; sourceTree = "<group>"; };
+		29C57BC6202C31B700BEF614 /* UIColor+RCCAppColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+RCCAppColor.h"; sourceTree = "<group>"; };
+		29C57BC7202C31B700BEF614 /* UIColor+RCCAppColor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+RCCAppColor.m"; sourceTree = "<group>"; };
+		29C57BCA202C370500BEF614 /* RCCBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCCBaseViewController.h; sourceTree = "<group>"; };
+		29C57BCB202C370500BEF614 /* RCCBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RCCBaseViewController.m; sourceTree = "<group>"; };
+		29C57BCD202C399100BEF614 /* RCCMainSideMenuViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCCMainSideMenuViewController.h; sourceTree = "<group>"; };
+		29C57BCE202C399100BEF614 /* RCCMainSideMenuViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RCCMainSideMenuViewController.m; sourceTree = "<group>"; };
+		29C57BF0202C82DE00BEF614 /* RCCWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCCWebViewController.h; sourceTree = "<group>"; };
+		29C57BF1202C82DE00BEF614 /* RCCWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RCCWebViewController.m; sourceTree = "<group>"; };
+		29C57BF3202C848200BEF614 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		736C0DADB86A380D889AC054 /* Pods_RCC_Guide.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RCC_Guide.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		76862CEAC2471AF4591F3478 /* Pods-RCC Guide.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RCC Guide.release.xcconfig"; path = "Pods/Target Support Files/Pods-RCC Guide/Pods-RCC Guide.release.xcconfig"; sourceTree = "<group>"; };
 		F19B7878D4EE03C578E83A34 /* Pods-RCC Guide.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RCC Guide.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RCC Guide/Pods-RCC Guide.debug.xcconfig"; sourceTree = "<group>"; };
@@ -63,6 +84,7 @@
 		299E0254202A37BA00646CFC /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				29C57BC4202C1FCD00BEF614 /* AppMenu.plist */,
 				29C432972029D8D7009EC2CF /* main.m */,
 				29C432962029D8D7009EC2CF /* Info.plist */,
 				29C432A02029DF15009EC2CF /* NotoSans-Regular.ttf */,
@@ -74,8 +96,9 @@
 		299E0255202B7ACB00646CFC /* ContentViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				29C57BEE202C801900BEF614 /* WebViewController */,
 				299E0257202B7B2C00646CFC /* ContentContainerViewController */,
-				29C275F0202B1D990054B652 /* RootContentViewController */,
+				29C275F0202B1D990054B652 /* ContentMainMenuViewController */,
 				299E0256202B7AF500646CFC /* ContentViewController */,
 				29C275E8202B1D1A0054B652 /* ContentListViewController */,
 			);
@@ -102,8 +125,10 @@
 			isa = PBXGroup;
 			children = (
 				299E0255202B7ACB00646CFC /* ContentViewControllers */,
-				29C275EC202B1D5F0054B652 /* AppMenuListViewController */,
+				29C275EC202B1D5F0054B652 /* AppMenuViewController */,
 				29C275E0202B1B000054B652 /* MainScreenViewController */,
+				29C57BCA202C370500BEF614 /* RCCBaseViewController.h */,
+				29C57BCB202C370500BEF614 /* RCCBaseViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -111,7 +136,7 @@
 		29C275DF202B19DE0054B652 /* StoryBoards */ = {
 			isa = PBXGroup;
 			children = (
-				29C275DD202B19D70054B652 /* Navigations.storyboard */,
+				29C275DD202B19D70054B652 /* Main.storyboard */,
 				29C4328E2029D8D7009EC2CF /* Contents.storyboard */,
 			);
 			name = StoryBoards;
@@ -135,27 +160,31 @@
 			name = ContentListViewController;
 			sourceTree = "<group>";
 		};
-		29C275EC202B1D5F0054B652 /* AppMenuListViewController */ = {
+		29C275EC202B1D5F0054B652 /* AppMenuViewController */ = {
 			isa = PBXGroup;
 			children = (
-				29C275ED202B1D840054B652 /* RCCAppMenuListViewController.h */,
-				29C275EE202B1D840054B652 /* RCCAppMenuListViewController.m */,
+				29C57BED202C7AAE00BEF614 /* MainSideMenuViewController */,
+				29C57BBD202C18B900BEF614 /* DataSource */,
+				29C275ED202B1D840054B652 /* RCCAppMenuViewController.h */,
+				29C275EE202B1D840054B652 /* RCCAppMenuViewController.m */,
 			);
-			name = AppMenuListViewController;
+			name = AppMenuViewController;
 			sourceTree = "<group>";
 		};
-		29C275F0202B1D990054B652 /* RootContentViewController */ = {
+		29C275F0202B1D990054B652 /* ContentMainMenuViewController */ = {
 			isa = PBXGroup;
 			children = (
-				29C275F1202B1E7E0054B652 /* RCCHomeContentViewController.h */,
-				29C275F2202B1E7E0054B652 /* RCCHomeContentViewController.m */,
+				29C57BBA202C101500BEF614 /* RCCContentMainMenuViewController.h */,
+				29C57BBB202C101500BEF614 /* RCCContentMainMenuViewController.m */,
 			);
-			name = RootContentViewController;
+			name = ContentMainMenuViewController;
 			sourceTree = "<group>";
 		};
 		29C275F4202B25990054B652 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				29C57BC6202C31B700BEF614 /* UIColor+RCCAppColor.h */,
+				29C57BC7202C31B700BEF614 /* UIColor+RCCAppColor.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -192,6 +221,35 @@
 			path = "RCC Guide";
 			sourceTree = "<group>";
 		};
+		29C57BBD202C18B900BEF614 /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				29C57BBE202C1BAE00BEF614 /* RCCAppMenuDataSource.h */,
+				29C57BBF202C1BAE00BEF614 /* RCCAppMenuDataSource.m */,
+				29C57BC1202C1C8700BEF614 /* RCCAppMenuItem.h */,
+				29C57BC2202C1C8700BEF614 /* RCCAppMenuItem.m */,
+			);
+			name = DataSource;
+			sourceTree = "<group>";
+		};
+		29C57BED202C7AAE00BEF614 /* MainSideMenuViewController */ = {
+			isa = PBXGroup;
+			children = (
+				29C57BCD202C399100BEF614 /* RCCMainSideMenuViewController.h */,
+				29C57BCE202C399100BEF614 /* RCCMainSideMenuViewController.m */,
+			);
+			name = MainSideMenuViewController;
+			sourceTree = "<group>";
+		};
+		29C57BEE202C801900BEF614 /* WebViewController */ = {
+			isa = PBXGroup;
+			children = (
+				29C57BF0202C82DE00BEF614 /* RCCWebViewController.h */,
+				29C57BF1202C82DE00BEF614 /* RCCWebViewController.m */,
+			);
+			name = WebViewController;
+			sourceTree = "<group>";
+		};
 		2D1838E038A14E2A33D6663F /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -204,6 +262,7 @@
 		7FA36203640B53C9C6BB3E63 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				29C57BF3202C848200BEF614 /* WebKit.framework */,
 				736C0DADB86A380D889AC054 /* Pods_RCC_Guide.framework */,
 			);
 			name = Frameworks;
@@ -271,10 +330,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29C57BC5202C1FCD00BEF614 /* AppMenu.plist in Resources */,
 				29C432A22029DF16009EC2CF /* NotoSans-Regular.ttf in Resources */,
 				29C432922029D8D7009EC2CF /* Assets.xcassets in Resources */,
 				29C432A32029DF16009EC2CF /* NotoSans-Bold.ttf in Resources */,
-				29C275DE202B19D70054B652 /* Navigations.storyboard in Resources */,
+				29C275DE202B19D70054B652 /* Main.storyboard in Resources */,
 				29C432902029D8D7009EC2CF /* Contents.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -334,13 +394,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				29C275EF202B1D840054B652 /* RCCAppMenuListViewController.m in Sources */,
+				29C57BCC202C370600BEF614 /* RCCBaseViewController.m in Sources */,
+				29C275EF202B1D840054B652 /* RCCAppMenuViewController.m in Sources */,
 				29C432982029D8D7009EC2CF /* main.m in Sources */,
 				29C275E3202B1C910054B652 /* RCCMainScreenViewController.m in Sources */,
+				29C57BCF202C399100BEF614 /* RCCMainSideMenuViewController.m in Sources */,
 				29C4328A2029D8D7009EC2CF /* AppDelegate.m in Sources */,
-				29C275F3202B1E7E0054B652 /* RCCHomeContentViewController.m in Sources */,
 				29C275EB202B1D530054B652 /* RCCContentListViewController.m in Sources */,
 				29C275E7202B1CCC0054B652 /* RCCContentViewController.m in Sources */,
+				29C57BC8202C31B700BEF614 /* UIColor+RCCAppColor.m in Sources */,
+				29C57BC3202C1C8700BEF614 /* RCCAppMenuItem.m in Sources */,
+				29C57BF2202C82DE00BEF614 /* RCCWebViewController.m in Sources */,
+				29C57BBC202C101500BEF614 /* RCCContentMainMenuViewController.m in Sources */,
+				29C57BC0202C1BAE00BEF614 /* RCCAppMenuDataSource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
