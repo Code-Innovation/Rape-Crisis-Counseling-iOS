@@ -13,9 +13,4 @@
 + (UIColor *)rccColorFromHex:(unsigned long)hexValueColor
                        alpha:(CGFloat)alpha;
 
-+ (UIColor *)rccAquaColor;
-+ (UIColor *)rccBurntColor;
-+ (UIColor *)rccLightGreyColor;
-+ (UIColor *)rccDarkGreyColor;
-
 @end

@@ -7,31 +7,41 @@
 //
 
 #import "RCCWebViewController.h"
+#import "UIColor+RCCAppColor.h"
 
 @interface RCCWebViewController ()
-
+@property (nonatomic, weak) IBOutlet UITextView *contentTextView;
 @end
 
 @implementation RCCWebViewController
 
+- (void)setupConent
+{
+    NSMutableAttributedString *text = [NSMutableAttributedString new];
+    NSAttributedString *contentText = [[NSAttributedString alloc] initWithData:[self.contentData.content dataUsingEncoding:NSUTF8StringEncoding]
+                                                                       options:@{NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType,
+                                                                                 NSCharacterEncodingDocumentAttribute: @(NSUTF8StringEncoding)}
+                                                            documentAttributes:nil
+                                                                         error:nil];
+    [text appendAttributedString:contentText];
+    [text setAttributes:@{NSFontAttributeName : [UIFont fontWithName:@"NotoSans"
+                                                                size:17],
+                          NSForegroundColorAttributeName : [UIColor rccColorFromHex:0x5d5d5d
+                                                                              alpha:1.0]
+                          }
+                  range:NSMakeRange(0, contentText.length)];
+    self.contentTextView.attributedText = text;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [self setupConent];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)setContentData:(RCCContentData *)contentData
+{
+    _contentData = contentData;
+    [self setupConent];
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

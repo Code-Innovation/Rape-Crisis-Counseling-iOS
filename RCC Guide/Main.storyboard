@@ -46,7 +46,6 @@
                     </navigationBar>
                     <connections>
                         <segue destination="ZSM-a7-kaj" kind="relationship" relationship="rootViewController" id="wIS-Na-n41"/>
-                        <segue destination="Ida-ej-pMj" kind="show" identifier="ShowWebInfo" id="T7m-hx-uPz"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h8D-16-YZW" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -229,25 +228,32 @@
         <!--Web View Controller-->
         <scene sceneID="POP-VR-Hgj">
             <objects>
-                <viewController id="Ida-ej-pMj" customClass="RCCWebViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RCCWebViewController" id="Ida-ej-pMj" customClass="RCCWebViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rUP-Ku-nlC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SJF-He-jME">
-                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </webView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="IAO-HP-sq5">
+                                <rect key="frame" x="25" y="20" width="270" height="548"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" red="0.30588235294117649" green="0.75294117647058822" blue="0.68627450980392157" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="SJF-He-jME" firstAttribute="leading" secondItem="hVk-3i-dku" secondAttribute="leading" id="2Gn-0w-P5p"/>
-                            <constraint firstItem="hVk-3i-dku" firstAttribute="bottom" secondItem="SJF-He-jME" secondAttribute="bottom" id="kfI-PY-DeA"/>
-                            <constraint firstItem="SJF-He-jME" firstAttribute="top" secondItem="hVk-3i-dku" secondAttribute="top" id="pGO-Jf-sAe"/>
-                            <constraint firstItem="hVk-3i-dku" firstAttribute="trailing" secondItem="SJF-He-jME" secondAttribute="trailing" id="vLr-7z-EcQ"/>
+                            <constraint firstItem="IAO-HP-sq5" firstAttribute="centerX" secondItem="rUP-Ku-nlC" secondAttribute="centerX" id="WdB-Is-Rs0"/>
+                            <constraint firstItem="IAO-HP-sq5" firstAttribute="leading" secondItem="hVk-3i-dku" secondAttribute="leading" constant="25" id="iAG-hL-kWV"/>
+                            <constraint firstItem="hVk-3i-dku" firstAttribute="bottom" secondItem="IAO-HP-sq5" secondAttribute="bottom" id="rTh-ya-OTm"/>
+                            <constraint firstItem="IAO-HP-sq5" firstAttribute="top" secondItem="hVk-3i-dku" secondAttribute="top" id="svn-vJ-GIQ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hVk-3i-dku"/>
                     </view>
+                    <connections>
+                        <outlet property="contentTextView" destination="IAO-HP-sq5" id="OA6-30-Wkf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sgF-5o-cWL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RCCContentData.h"
 
 @interface RCCWebViewController : UIViewController
+
+@property (nonatomic, strong) RCCContentData *contentData;
 
 @end

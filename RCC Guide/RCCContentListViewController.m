@@ -7,8 +7,13 @@
 //
 
 #import "RCCContentListViewController.h"
+#import "RCCContentListDataSource.h"
+#import "RCCContentProvider.h"
 
-@interface RCCContentListViewController ()
+@interface RCCContentListViewController () <UITableViewDelegate>
+
+@property (nonatomic, strong) RCCContentListDataSource *dataSource;
+@property (nonatomic, weak) IBOutlet UITableView *tableView;
 
 @end
 
@@ -16,22 +21,47 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.tableView.tableFooterView = [UIView new];
+    NSArray *items = [[[RCCContentProvider alloc] init] advocateTrainingContent];
+    self.dataSource = [[RCCContentListDataSource alloc] initWithContentData:items];
+    self.tableView.dataSource = self.dataSource;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+#pragma mark - UITableViewDelegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath
+                             animated:YES];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
+{
+    NSRange range;
+    BOOL isExpanded = [self.dataSource isExpanded:indexPath];
+    if(isExpanded) {
+        range = [self.dataSource collapseItemIndexPath:indexPath];
+    } else {
+        range = [self.dataSource expandItemAtIndexPath:indexPath];
+    }
+    NSMutableArray *indexPaths = [NSMutableArray new];
+    for(NSInteger i = 0; i < range.length; i ++) {
+        [indexPaths addObject:[NSIndexPath indexPathForRow:range.location + i
+                                                 inSection:indexPath.section]];
+    }
+    if(range.length > 0) {
+        [tableView beginUpdates];
+        if(isExpanded) {
+            [self.tableView deleteRowsAtIndexPaths:indexPaths
+                                  withRowAnimation:UITableViewRowAnimationBottom];
+        } else {
+            [self.tableView insertRowsAtIndexPaths:indexPaths
+                                  withRowAnimation:UITableViewRowAnimationTop];
+        }
+        [self.tableView reloadRowsAtIndexPaths:@[indexPath]
+                              withRowAnimation:UITableViewRowAnimationNone];
+        [tableView endUpdates];
+    }
 }
-*/
 
 @end

@@ -20,29 +20,4 @@
 
 }
 
-+ (UIColor *)rccAquaColor
-{
-    return [UIColor rccColorFromHex:0x4ec0af
-                              alpha:1.0];
-}
-
-+ (UIColor *)rccBurntColor
-{
-    return [UIColor rccColorFromHex:0xf47e59
-                              alpha:1.0];
-}
-
-+ (UIColor *)rccLightGreyColor
-{
-    return [UIColor rccColorFromHex:0xd2d2d2
-                              alpha:1.0];
-}
-
-+ (UIColor *)rccDarkGreyColor
-{
-    return [UIColor rccColorFromHex:0x414142
-                              alpha:1.0];
-}
-
-
 @end

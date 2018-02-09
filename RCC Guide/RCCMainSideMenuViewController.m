@@ -9,6 +9,7 @@
 #import "RCCMainSideMenuViewController.h"
 #import "RCCAppMenuViewController.h"
 #import "RCCWebViewController.h"
+#import "RCCContentProvider.h"
 
 @interface RCCMainSideMenuViewController ()<UINavigationControllerDelegate, RCCAppMenuViewControllerDelegate>
 
@@ -28,7 +29,7 @@
 {
     [super prepareForSegue:segue
                     sender:sender];
-    if([segue.identifier isEqualToString:@"root"] && [segue.destinationViewController isKindOfClass:[UINavigationController class]]) {
+    if([segue.identifier isEqualToString:LGSideMenuSegueRootIdentifier] && [segue.destinationViewController isKindOfClass:[UINavigationController class]]) {
         self.contentNavigationController = (UINavigationController *)segue.destinationViewController;
         self.contentNavigationController.delegate = self;
     }
@@ -54,8 +55,12 @@
 
 - (void)showInfoContent:(NSString *)type
 {
-    [self.contentNavigationController performSegueWithIdentifier:@"ShowWebInfo"
-                                                          sender:nil];
+    RCCWebViewController *ctrl = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"RCCWebViewController"];
+    RCCContentData *item = [RCCContentProvider appContentFromKey:type];
+    ctrl.contentData = item;
+    ctrl.title = item.title;
+    [self.contentNavigationController pushViewController:ctrl
+                                                animated:YES];
 }
 
 #pragma mark - UINavigationControllerDelegate
