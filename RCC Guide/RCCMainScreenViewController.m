@@ -16,7 +16,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"RCC";
 }
 
 - (IBAction)leftClick:(id)sender
