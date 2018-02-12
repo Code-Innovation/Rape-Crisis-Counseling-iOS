@@ -10,6 +10,7 @@
 #import "RCCAppMenuViewController.h"
 #import "RCCWebViewController.h"
 #import "RCCContentProvider.h"
+#import "RCCContentMainMenuViewController.h"
 
 @interface RCCMainSideMenuViewController ()<UINavigationControllerDelegate, RCCAppMenuViewControllerDelegate>
 
@@ -63,6 +64,13 @@
                                                 animated:YES];
 }
 
+- (void)showContentMenuController:(NSString *)type
+{
+    RCCContentMainMenuViewController *ctrl = [[UIStoryboard storyboardWithName:@"Content" bundle:nil] instantiateViewControllerWithIdentifier:@"RCCContentMainMenuViewController"];
+    ctrl.contentType = type;
+    self.contentNavigationController.viewControllers = @[ctrl];
+}
+
 #pragma mark - UINavigationControllerDelegate
 
 - (void)navigationController:(UINavigationController *)navigationController
@@ -102,6 +110,9 @@
     [self hideRightViewAnimated];
     if([@[@"resources" , @"about"] containsObject:item.action]) {
         [self showInfoContent:item.action];
+    }
+    if([@[@"advocate_training"] containsObject:item.action]) {
+        [self showContentMenuController:item.action];
     }
 }
 

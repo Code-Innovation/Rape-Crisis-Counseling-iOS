@@ -10,4 +10,6 @@
 
 @interface RCCContentMainMenuViewController : UIViewController
 
+@property(nonatomic)NSString *contentType;
+
 @end

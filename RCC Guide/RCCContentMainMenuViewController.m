@@ -28,10 +28,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    RCCContentData *info = [RCCContentProvider appContentFromKey:@"advocate_training"];
+    [self updateUI];
+}
+
+- (void)updateUI
+{
+    self.contentItems = nil;
+    RCCContentData *info = [RCCContentProvider appContentFromKey:self.contentType];
     self.titleLabel.text = info.title;
     self.contentLabel.text = info.content;
-    self.contentItems = [[[RCCContentProvider alloc] init] advocateTrainingContent];
+    if([self.contentType isEqualToString:@"advocate_training"]){
+        self.contentItems = [RCCContentProvider advocateTrainingContent];
+    }
     [self configureMenuButtons];
 }
 
@@ -43,7 +51,9 @@
         RCCContentContainerViewController *ctrl= (RCCContentContainerViewController *)segue.destinationViewController;
         ctrl.contentItems = self.contentItems;
         ctrl.currentContent = self.selectedItem;
-        ctrl.title = @"Volunteer Advocate Training";
+        if([self.contentType isEqualToString:@"advocate_training"]) {
+            ctrl.title = @"Volunteer Advocate Training";
+        }
     }
 }
 

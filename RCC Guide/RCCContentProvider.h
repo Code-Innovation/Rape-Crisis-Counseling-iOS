@@ -12,7 +12,7 @@
 
 @interface RCCContentProvider : NSObject
 
-- (NSArray<RCCContentData *> *)advocateTrainingContent;
++ (NSArray<RCCContentData *> *)advocateTrainingContent;
 
 + (RCCContentData *)appContentFromKey:(NSString *)key;
 

@@ -7,6 +7,7 @@
 //
 
 #import "RCCContentViewController.h"
+#import "UIFont+RCCApp.h"
 
 @interface RCCContentViewController ()
 
@@ -15,6 +16,7 @@
 @property (nonatomic, strong) IBOutlet NSLayoutConstraint *nextTopConstraint;
 @property (nonatomic, strong) IBOutlet NSLayoutConstraint *prevBottomConstraint;
 @property (nonatomic, strong) IBOutlet UITextView *contentTextView;
+@property (nonatomic, weak) IBOutlet UILabel *titleLabel;
 
 @end
 
@@ -54,12 +56,28 @@
 - (void)updateContent
 {
     [self updateNextPrevButton];
+    
+    RCCContentData *topItem = self.currentContent;
+    do{
+        self.titleLabel.text = topItem.title;
+        topItem = topItem.parrent;
+    }while(topItem != nil);
+
     NSAttributedString *contentText = [[NSAttributedString alloc] initWithData:[self.currentContent.content dataUsingEncoding:NSUTF8StringEncoding]
                                                                        options:@{NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType,
                                                                                  NSCharacterEncodingDocumentAttribute: @(NSUTF8StringEncoding)}
                                                             documentAttributes:nil
                                                                          error:nil];
-    self.contentTextView.attributedText = contentText;
+    NSMutableAttributedString *text = [NSMutableAttributedString new];
+    if((self.currentContent.title != nil) && ![self.titleLabel.text isEqualToString:self.currentContent.title]) {
+        NSAttributedString *titleText = [[NSAttributedString alloc] initWithString:[self.currentContent.title stringByAppendingString:@"\n\n"]
+                                                                        attributes:@{NSFontAttributeName : [UIFont rccAppFont:17]}];
+        [text appendAttributedString:titleText];
+    }
+    if(contentText != nil) {
+        [text appendAttributedString:contentText];
+    }
+    self.contentTextView.attributedText = text;
 }
 
 @end

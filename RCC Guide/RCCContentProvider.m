@@ -10,7 +10,7 @@
 
 @implementation RCCContentProvider
 
-- (NSArray<RCCContentData *> *)recursiveParseContent:(NSArray<NSDictionary *> *)contentItems
++ (NSArray<RCCContentData *> *)recursiveParseContent:(NSArray<NSDictionary *> *)contentItems
                                              parrent:(RCCContentData *)parrent
                                                level:(NSInteger)level
 {
@@ -43,7 +43,7 @@
     return items;
 }
 
-- (NSArray<RCCContentData *> *)parseJSONContent:(NSData *)jsonData
++ (NSArray<RCCContentData *> *)parseJSONContent:(NSData *)jsonData
 {
     NSDictionary *jsonDict = [NSJSONSerialization JSONObjectWithData:jsonData
                                                              options:0
@@ -54,7 +54,7 @@
                                  level:0];
 }
 
-- (NSArray<RCCContentData *> *)advocateTrainingContent
++ (NSArray<RCCContentData *> *)advocateTrainingContent
 {
     NSData *data = [NSData dataWithContentsOfURL:[[NSBundle mainBundle] URLForResource:@"output"
                                                                          withExtension:@"json"]];
