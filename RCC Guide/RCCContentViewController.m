@@ -10,28 +10,56 @@
 
 @interface RCCContentViewController ()
 
+@property (nonatomic, weak)IBOutlet UIButton *nextButton;
+@property (nonatomic, weak)IBOutlet UIButton *prevButton;
+@property (nonatomic, strong) IBOutlet NSLayoutConstraint *nextTopConstraint;
+@property (nonatomic, strong) IBOutlet NSLayoutConstraint *prevBottomConstraint;
+@property (nonatomic, strong) IBOutlet UITextView *contentTextView;
+
 @end
 
 @implementation RCCContentViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [self updateContent];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)updateNextPrevButton
+{
+    self.prevBottomConstraint.active = self.currentContent.prevItem != nil;
+    self.nextTopConstraint.active = self.currentContent.nextItem != nil;
+    [self.nextButton setTitle:self.currentContent.nextItem.title
+                     forState:UIControlStateNormal];
+    [self.prevButton setTitle:self.currentContent.prevItem.title
+                     forState:UIControlStateNormal];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)setCurrentContent:(RCCContentData *)currentContent
+{
+    _currentContent = currentContent;
+    [self updateContent];
 }
-*/
+
+- (IBAction)prevButtonClick:(id)sender
+{
+    self.currentContent = self.currentContent.prevItem;
+}
+
+- (IBAction)nextButtonClick:(id)sender
+{
+    self.currentContent = self.currentContent.nextItem;
+}
+
+- (void)updateContent
+{
+    [self updateNextPrevButton];
+    NSAttributedString *contentText = [[NSAttributedString alloc] initWithData:[self.currentContent.content dataUsingEncoding:NSUTF8StringEncoding]
+                                                                       options:@{NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType,
+                                                                                 NSCharacterEncodingDocumentAttribute: @(NSUTF8StringEncoding)}
+                                                            documentAttributes:nil
+                                                                         error:nil];
+    self.contentTextView.attributedText = contentText;
+}
 
 @end

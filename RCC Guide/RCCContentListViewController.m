@@ -8,7 +8,6 @@
 
 #import "RCCContentListViewController.h"
 #import "RCCContentListDataSource.h"
-#import "RCCContentProvider.h"
 
 @interface RCCContentListViewController () <UITableViewDelegate>
 
@@ -22,9 +21,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.tableView.tableFooterView = [UIView new];
-    NSArray *items = [[[RCCContentProvider alloc] init] advocateTrainingContent];
-    self.dataSource = [[RCCContentListDataSource alloc] initWithContentData:items];
     self.tableView.dataSource = self.dataSource;
+}
+
+- (void)setContentItems:(NSArray<RCCContentData *> *)contentItems
+{
+    _contentItems = contentItems;
+    self.dataSource = [[RCCContentListDataSource alloc] initWithContentData:contentItems];
+    self.tableView.dataSource = self.dataSource;
+    [self.tableView reloadData];
 }
 
 #pragma mark - UITableViewDelegate
@@ -33,6 +38,10 @@
 {
     [tableView deselectRowAtIndexPath:indexPath
                              animated:YES];
+    if([self.delegate respondsToSelector:@selector(contentListViewController:selectedContent:)]) {
+        [self.delegate contentListViewController:self
+                                 selectedContent:[self.dataSource itemAtIndexPath:indexPath]];
+    }
 }
 
 - (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath

@@ -9,6 +9,7 @@
 #import "RCCContentMainMenuViewController.h"
 #import "RCCContentData.h"
 #import "RCCContentProvider.h"
+#import "RCCContentContainerViewController.h"
 
 @interface RCCContentMainMenuViewController ()
 
@@ -17,25 +18,48 @@
 @property (nonatomic, weak) IBOutlet UILabel *titleLabel;
 @property (nonatomic, weak) IBOutlet UILabel *contentLabel;
 @property (nonatomic, strong) NSMutableArray<UIButton *> *menuButtons;
+@property (nonatomic, strong) NSArray<RCCContentData *> *contentItems;
+@property (nonatomic, strong) RCCContentData *selectedItem;
+@property (nonatomic, weak) RCCContentContainerViewController *containerViewController;
+
 @end
 
 @implementation RCCContentMainMenuViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self configureMenuButtons];
     RCCContentData *info = [RCCContentProvider appContentFromKey:@"advocate_training"];
     self.titleLabel.text = info.title;
     self.contentLabel.text = info.content;
+    self.contentItems = [[[RCCContentProvider alloc] init] advocateTrainingContent];
+    [self configureMenuButtons];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    [super prepareForSegue:segue
+                    sender:sender];
+    if([segue.destinationViewController isKindOfClass:[RCCContentContainerViewController class]]) {
+        RCCContentContainerViewController *ctrl= (RCCContentContainerViewController *)segue.destinationViewController;
+        ctrl.contentItems = self.contentItems;
+        ctrl.currentContent = self.selectedItem;
+        ctrl.title = @"Volunteer Advocate Training";
+    }
 }
 
 - (IBAction)menuUnwindSegue:(UIStoryboardSegue *)segue
 {
-    
+    self.selectedItem = nil;
 }
 
 - (IBAction)menuButtonClick:(id)sender
 {
+    NSUInteger index = [self.menuButtons indexOfObject:sender];
+    if(index != NSNotFound) {
+        self.selectedItem = self.contentItems[index];
+    } else {
+        self.selectedItem = nil;
+    }
     [self performSegueWithIdentifier:@"showContent"
                               sender:self];
 }
@@ -43,17 +67,19 @@
 - (void)configureMenuButtons
 {
     const CGFloat space = 15;
-    NSArray<RCCContentData *> *items = [[[RCCContentProvider alloc] init] advocateTrainingContent];
     [self.menuButtons makeObjectsPerformSelector:@selector(removeFromSuperview)];
     self.menuButtons = [NSMutableArray new];
     UIButton *prevButton = nil;
-    for(RCCContentData *item in items) {
+    for(RCCContentData *item in self.contentItems) {
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
         button.translatesAutoresizingMaskIntoConstraints = NO;
         [self.menuButtonContainer addSubview:button];
         [self.menuButtons addObject:button];
         [button setTitle:item.title
                 forState:UIControlStateNormal];
+        [button addTarget:self
+                   action:@selector(menuButtonClick:)
+         forControlEvents:UIControlEventTouchUpInside];
         [button setBackgroundImage:[UIImage imageNamed:@"green_button_small"]
                           forState:UIControlStateNormal];
         [button setBackgroundImage:[UIImage imageNamed:@"green_button_small_press"]

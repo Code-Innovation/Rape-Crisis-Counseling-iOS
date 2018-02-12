@@ -15,16 +15,30 @@
                                                level:(NSInteger)level
 {
     NSMutableArray *items = [NSMutableArray new];
+    RCCContentData *prev = parrent;
     for(NSDictionary *itemDict in contentItems) {
         RCCContentData *item = [[RCCContentData alloc] init];
+        prev.nextItem = item;
         item.title = itemDict[@"title"];
         item.content = itemDict[@"content"];
         item.parrent = parrent;
         item.level = level;
-        item.subsections = [self recursiveParseContent:itemDict[@"subsections"]
-                                               parrent:item
-                                                 level:level + 1];
+        item.prevItem = prev;
+        NSArray *subsectionsData = itemDict[@"subsections"];
+        if(subsectionsData.count > 0) {
+            item.subsections = [self recursiveParseContent:subsectionsData
+                                                   parrent:item
+                                                     level:level + 1];
+        }
         [items addObject:item];
+        if(item.subsections != nil) {
+            prev = item.subsections.lastObject;
+            while(prev.subsections.lastObject != nil) {
+                prev = prev.subsections.lastObject;
+            }
+        } else {
+            prev = item;
+        }
     }
     return items;
 }

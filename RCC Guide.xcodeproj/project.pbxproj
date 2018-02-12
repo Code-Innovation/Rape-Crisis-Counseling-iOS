@@ -8,9 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		1BBC40E067AC8B82A478E32F /* Pods_RCC_Guide.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 736C0DADB86A380D889AC054 /* Pods_RCC_Guide.framework */; };
+		290D38E3203164AE009D6919 /* RCCContentContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 290D38E2203164AE009D6919 /* RCCContentContainerViewController.m */; };
+		290D38E820316557009D6919 /* RCCContentSideMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 290D38E720316557009D6919 /* RCCContentSideMenuViewController.m */; };
 		291EA3F1202DC40F0060A98A /* ContentAppInformation.plist in Resources */ = {isa = PBXBuildFile; fileRef = 291EA3F0202DC40E0060A98A /* ContentAppInformation.plist */; };
 		29C275DE202B19D70054B652 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29C275DD202B19D70054B652 /* Main.storyboard */; };
-		29C275E3202B1C910054B652 /* RCCMainScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C275E2202B1C910054B652 /* RCCMainScreenViewController.m */; };
 		29C275E7202B1CCC0054B652 /* RCCContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C275E6202B1CCC0054B652 /* RCCContentViewController.m */; };
 		29C275EB202B1D530054B652 /* RCCContentListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C275EA202B1D530054B652 /* RCCContentListViewController.m */; };
 		29C275EF202B1D840054B652 /* RCCAppMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C275EE202B1D840054B652 /* RCCAppMenuViewController.m */; };
@@ -35,10 +36,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		290D38E1203164AE009D6919 /* RCCContentContainerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCCContentContainerViewController.h; sourceTree = "<group>"; };
+		290D38E2203164AE009D6919 /* RCCContentContainerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RCCContentContainerViewController.m; sourceTree = "<group>"; };
+		290D38E620316557009D6919 /* RCCContentSideMenuViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCCContentSideMenuViewController.h; sourceTree = "<group>"; };
+		290D38E720316557009D6919 /* RCCContentSideMenuViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RCCContentSideMenuViewController.m; sourceTree = "<group>"; };
 		291EA3F0202DC40E0060A98A /* ContentAppInformation.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ContentAppInformation.plist; sourceTree = "<group>"; };
 		29C275DD202B19D70054B652 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		29C275E1202B1C910054B652 /* RCCMainScreenViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCCMainScreenViewController.h; sourceTree = "<group>"; };
-		29C275E2202B1C910054B652 /* RCCMainScreenViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RCCMainScreenViewController.m; sourceTree = "<group>"; };
 		29C275E5202B1CCC0054B652 /* RCCContentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCCContentViewController.h; sourceTree = "<group>"; };
 		29C275E6202B1CCC0054B652 /* RCCContentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RCCContentViewController.m; sourceTree = "<group>"; };
 		29C275E9202B1D530054B652 /* RCCContentListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCCContentListViewController.h; sourceTree = "<group>"; };
@@ -94,6 +97,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		290D38E4203164C1009D6919 /* ContentMenuViewController */ = {
+			isa = PBXGroup;
+			children = (
+				290D38E52031652B009D6919 /* ContentSideMenuController */,
+				29C275E8202B1D1A0054B652 /* ContentListViewController */,
+			);
+			name = ContentMenuViewController;
+			sourceTree = "<group>";
+		};
+		290D38E52031652B009D6919 /* ContentSideMenuController */ = {
+			isa = PBXGroup;
+			children = (
+				290D38E620316557009D6919 /* RCCContentSideMenuViewController.h */,
+				290D38E720316557009D6919 /* RCCContentSideMenuViewController.m */,
+			);
+			name = ContentSideMenuController;
+			sourceTree = "<group>";
+		};
 		299E0254202A37BA00646CFC /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -111,12 +132,10 @@
 		299E0255202B7ACB00646CFC /* ContentViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				299E0258202CD1E400646CFC /* DataSource */,
-				29C57BEE202C801900BEF614 /* WebViewController */,
+				290D38E4203164C1009D6919 /* ContentMenuViewController */,
 				299E0257202B7B2C00646CFC /* ContentContainerViewController */,
 				29C275F0202B1D990054B652 /* ContentMainMenuViewController */,
 				299E0256202B7AF500646CFC /* ContentViewController */,
-				29C275E8202B1D1A0054B652 /* ContentListViewController */,
 			);
 			name = ContentViewControllers;
 			sourceTree = "<group>";
@@ -133,23 +152,18 @@
 		299E0257202B7B2C00646CFC /* ContentContainerViewController */ = {
 			isa = PBXGroup;
 			children = (
+				290D38E1203164AE009D6919 /* RCCContentContainerViewController.h */,
+				290D38E2203164AE009D6919 /* RCCContentContainerViewController.m */,
 			);
 			name = ContentContainerViewController;
-			sourceTree = "<group>";
-		};
-		299E0258202CD1E400646CFC /* DataSource */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = DataSource;
 			sourceTree = "<group>";
 		};
 		29C275DB202B0BC10054B652 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				29C57BEE202C801900BEF614 /* WebViewController */,
 				299E0255202B7ACB00646CFC /* ContentViewControllers */,
 				29C275EC202B1D5F0054B652 /* AppMenuViewController */,
-				29C275E0202B1B000054B652 /* MainScreenViewController */,
 				29C57BCA202C370500BEF614 /* RCCBaseViewController.h */,
 				29C57BCB202C370500BEF614 /* RCCBaseViewController.m */,
 			);
@@ -163,15 +177,6 @@
 				29C4328E2029D8D7009EC2CF /* Contents.storyboard */,
 			);
 			name = StoryBoards;
-			sourceTree = "<group>";
-		};
-		29C275E0202B1B000054B652 /* MainScreenViewController */ = {
-			isa = PBXGroup;
-			children = (
-				29C275E1202B1C910054B652 /* RCCMainScreenViewController.h */,
-				29C275E2202B1C910054B652 /* RCCMainScreenViewController.m */,
-			);
-			name = MainScreenViewController;
 			sourceTree = "<group>";
 		};
 		29C275E8202B1D1A0054B652 /* ContentListViewController */ = {
@@ -444,13 +449,14 @@
 				29C57BCC202C370600BEF614 /* RCCBaseViewController.m in Sources */,
 				29C275EF202B1D840054B652 /* RCCAppMenuViewController.m in Sources */,
 				29C432982029D8D7009EC2CF /* main.m in Sources */,
-				29C275E3202B1C910054B652 /* RCCMainScreenViewController.m in Sources */,
 				29C57BCF202C399100BEF614 /* RCCMainSideMenuViewController.m in Sources */,
 				29F7CFFC202D65F800B75900 /* RCCContentProvider.m in Sources */,
 				29C4328A2029D8D7009EC2CF /* AppDelegate.m in Sources */,
 				29C275EB202B1D530054B652 /* RCCContentListViewController.m in Sources */,
+				290D38E3203164AE009D6919 /* RCCContentContainerViewController.m in Sources */,
 				29C275E7202B1CCC0054B652 /* RCCContentViewController.m in Sources */,
 				29F7CFF9202D63C000B75900 /* RCCContentData.m in Sources */,
+				290D38E820316557009D6919 /* RCCContentSideMenuViewController.m in Sources */,
 				29C57BC8202C31B700BEF614 /* UIColor+RCCAppColor.m in Sources */,
 				29C57BC3202C1C8700BEF614 /* RCCAppMenuItem.m in Sources */,
 				29C57BF2202C82DE00BEF614 /* RCCWebViewController.m in Sources */,

@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RCCContentData.h"
 
-#import <LGSideMenuController/LGSideMenuController.h>
+@interface RCCContentViewController : UIViewController
 
-@interface RCCContentViewController : LGSideMenuController
+@property(nonatomic, strong) RCCContentData *currentContent;
 
 @end
