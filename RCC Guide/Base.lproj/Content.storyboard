@@ -34,17 +34,18 @@
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
                                         <subviews>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" editable="NO" text="Content" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="3PZ-Ul-QbK">
-                                                <rect key="frame" x="25" y="63.5" width="270" height="39.5"/>
+                                                <rect key="frame" x="25" y="20" width="270" height="39.5"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
                                             </textView>
                                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uwa-pZ-VWj">
-                                                <rect key="frame" x="30" y="143" width="260" height="158"/>
+                                                <rect key="frame" x="30" y="99.5" width="260" height="158"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ScL-h6-RtA">
                                                         <rect key="frame" x="0.0" y="0.0" width="260" height="69"/>
-                                                        <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="17"/>
+                                                        <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="18"/>
                                                         <state key="normal" image="arrow_next" backgroundImage="green_button"/>
                                                         <connections>
                                                             <action selector="nextButtonClick:" destination="jMZ-Gq-NNx" eventType="touchUpInside" id="fr9-Hp-caL"/>
@@ -52,7 +53,7 @@
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dZZ-0S-hjo">
                                                         <rect key="frame" x="0.0" y="89" width="260" height="69"/>
-                                                        <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="17"/>
+                                                        <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="18"/>
                                                         <state key="normal" image="arrow_prev" backgroundImage="green_button"/>
                                                         <connections>
                                                             <action selector="prevButtonClick:" destination="jMZ-Gq-NNx" eventType="touchUpInside" id="x7Q-Yo-Fy6"/>
@@ -72,23 +73,14 @@
                                                     <constraint firstAttribute="bottom" secondItem="ScL-h6-RtA" secondAttribute="bottom" priority="250" id="nBF-jk-RcR"/>
                                                 </constraints>
                                             </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="opD-pu-3gu">
-                                                <rect key="frame" x="30" y="20" width="260" height="23.5"/>
-                                                <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="uwa-pZ-VWj" firstAttribute="top" secondItem="3PZ-Ul-QbK" secondAttribute="bottom" constant="40" id="1Yg-di-9b4"/>
-                                            <constraint firstItem="3PZ-Ul-QbK" firstAttribute="top" secondItem="opD-pu-3gu" secondAttribute="bottom" constant="20" id="2ge-bE-Mr9"/>
                                             <constraint firstItem="uwa-pZ-VWj" firstAttribute="leading" secondItem="xk4-fp-oXm" secondAttribute="leading" constant="30" id="Ax6-wL-E0d"/>
-                                            <constraint firstItem="opD-pu-3gu" firstAttribute="top" secondItem="xk4-fp-oXm" secondAttribute="top" constant="20" id="JDt-CR-2pA"/>
-                                            <constraint firstItem="opD-pu-3gu" firstAttribute="centerX" secondItem="xk4-fp-oXm" secondAttribute="centerX" id="LUE-1L-gKW"/>
-                                            <constraint firstItem="opD-pu-3gu" firstAttribute="leading" secondItem="xk4-fp-oXm" secondAttribute="leading" constant="30" id="bw0-34-l87"/>
                                             <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="uwa-pZ-VWj" secondAttribute="bottom" constant="20" id="cX8-Tk-Moj"/>
                                             <constraint firstItem="3PZ-Ul-QbK" firstAttribute="centerX" secondItem="xk4-fp-oXm" secondAttribute="centerX" id="dTh-TS-Is2"/>
+                                            <constraint firstItem="3PZ-Ul-QbK" firstAttribute="top" secondItem="xk4-fp-oXm" secondAttribute="top" constant="20" id="o9D-bh-6d1"/>
                                             <constraint firstItem="uwa-pZ-VWj" firstAttribute="centerX" secondItem="xk4-fp-oXm" secondAttribute="centerX" id="pKe-hg-g74"/>
                                             <constraint firstItem="3PZ-Ul-QbK" firstAttribute="leading" secondItem="xk4-fp-oXm" secondAttribute="leading" constant="25" id="riE-jf-0YF"/>
                                         </constraints>
@@ -119,7 +111,6 @@
                         <outlet property="nextTopConstraint" destination="Lgt-p1-FV4" id="6fT-Lx-p5r"/>
                         <outlet property="prevBottomConstraint" destination="Z4T-VW-Dz0" id="siR-x5-hLH"/>
                         <outlet property="prevButton" destination="dZZ-0S-hjo" id="SAI-I9-dxO"/>
-                        <outlet property="titleLabel" destination="opD-pu-3gu" id="bYx-LE-bph"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ci6-7x-yvk" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -195,20 +186,14 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yop-x6-jc2">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lfC-NP-l4z">
-                                                <rect key="frame" x="30" y="20" width="260" height="23.5"/>
-                                                <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="Content" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="nEQ-re-yCR">
-                                                <rect key="frame" x="25" y="63.5" width="270" height="39.5"/>
+                                                <rect key="frame" x="25" y="20" width="270" height="42"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="17"/>
+                                                <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="19"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gth-Ij-gr9">
-                                                <rect key="frame" x="30" y="123" width="260" height="69"/>
+                                                <rect key="frame" x="30" y="82" width="260" height="69"/>
                                                 <state key="normal" image="arrow_prev" backgroundImage="green_button"/>
                                                 <state key="highlighted" backgroundImage="green_button_press"/>
                                                 <connections>
@@ -218,13 +203,10 @@
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstItem="lfC-NP-l4z" firstAttribute="top" secondItem="Yop-x6-jc2" secondAttribute="top" constant="20" id="4Lr-Fi-OKc"/>
-                                            <constraint firstItem="lfC-NP-l4z" firstAttribute="leading" secondItem="Yop-x6-jc2" secondAttribute="leading" constant="30" id="DHq-To-5zg"/>
+                                            <constraint firstItem="nEQ-re-yCR" firstAttribute="top" secondItem="Yop-x6-jc2" secondAttribute="top" constant="20" id="9i6-9t-alY"/>
                                             <constraint firstItem="nEQ-re-yCR" firstAttribute="leading" secondItem="Yop-x6-jc2" secondAttribute="leading" constant="25" id="GkD-wq-Jbk"/>
-                                            <constraint firstItem="lfC-NP-l4z" firstAttribute="centerX" secondItem="Yop-x6-jc2" secondAttribute="centerX" id="PsP-so-DCc"/>
                                             <constraint firstItem="Gth-Ij-gr9" firstAttribute="centerX" secondItem="Yop-x6-jc2" secondAttribute="centerX" id="U6A-mz-g7E"/>
                                             <constraint firstItem="Gth-Ij-gr9" firstAttribute="leading" secondItem="Yop-x6-jc2" secondAttribute="leading" constant="30" id="gGn-d9-fmY"/>
-                                            <constraint firstItem="nEQ-re-yCR" firstAttribute="top" secondItem="lfC-NP-l4z" secondAttribute="bottom" constant="20" id="jNW-g1-5mp"/>
                                             <constraint firstItem="nEQ-re-yCR" firstAttribute="centerX" secondItem="Yop-x6-jc2" secondAttribute="centerX" id="lZb-Wj-4rk"/>
                                             <constraint firstItem="Gth-Ij-gr9" firstAttribute="top" secondItem="nEQ-re-yCR" secondAttribute="bottom" constant="20" id="zTc-6S-5OI"/>
                                         </constraints>
@@ -270,13 +252,13 @@
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Content" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pOu-ci-10d">
-                                                <rect key="frame" x="30" y="73.5" width="261" height="23.5"/>
-                                                <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="17"/>
+                                                <rect key="frame" x="30" y="78.5" width="261" height="26"/>
+                                                <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="19"/>
                                                 <color key="textColor" red="0.25490196078431371" green="0.25490196078431371" blue="0.25882352941176467" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="66E-B3-hEw">
-                                                <rect key="frame" x="30" y="117" width="260" height="39"/>
+                                                <rect key="frame" x="30" y="124.5" width="260" height="39"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NQd-N9-rdW">
                                                         <rect key="frame" x="0.0" y="0.0" width="260" height="39"/>
@@ -295,9 +277,9 @@
                                                     <constraint firstItem="NQd-N9-rdW" firstAttribute="top" secondItem="66E-B3-hEw" secondAttribute="top" id="udg-9o-Zge"/>
                                                 </constraints>
                                             </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uDS-8o-1hA">
-                                                <rect key="frame" x="141" y="20" width="38" height="23.5"/>
-                                                <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="17"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uDS-8o-1hA">
+                                                <rect key="frame" x="30" y="20" width="260.5" height="38.5"/>
+                                                <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="28"/>
                                                 <color key="textColor" red="0.25490196078431371" green="0.25490196078431371" blue="0.25882352941176467" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -309,9 +291,9 @@
                                             <constraint firstItem="66E-B3-hEw" firstAttribute="top" secondItem="pOu-ci-10d" secondAttribute="bottom" constant="20" id="N1A-Zl-YUR"/>
                                             <constraint firstItem="66E-B3-hEw" firstAttribute="centerX" secondItem="zmL-pl-l3F" secondAttribute="centerX" id="U69-8r-drS"/>
                                             <constraint firstItem="pOu-ci-10d" firstAttribute="centerX" secondItem="zmL-pl-l3F" secondAttribute="centerX" id="U9X-rj-lqf"/>
-                                            <constraint firstItem="pOu-ci-10d" firstAttribute="top" secondItem="uDS-8o-1hA" secondAttribute="bottom" constant="30" id="aFK-ln-fiL"/>
+                                            <constraint firstItem="pOu-ci-10d" firstAttribute="top" secondItem="uDS-8o-1hA" secondAttribute="bottom" constant="20" id="aFK-ln-fiL"/>
                                             <constraint firstItem="pOu-ci-10d" firstAttribute="leading" secondItem="zmL-pl-l3F" secondAttribute="leading" constant="30" id="gsP-yG-khv"/>
-                                            <constraint firstItem="uDS-8o-1hA" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="zmL-pl-l3F" secondAttribute="leading" constant="30" id="hyk-5q-J0o"/>
+                                            <constraint firstItem="uDS-8o-1hA" firstAttribute="leading" secondItem="zmL-pl-l3F" secondAttribute="leading" constant="30" id="hyk-5q-J0o"/>
                                             <constraint firstItem="uDS-8o-1hA" firstAttribute="centerX" secondItem="zmL-pl-l3F" secondAttribute="centerX" id="ldd-oY-sVR"/>
                                             <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="66E-B3-hEw" secondAttribute="bottom" constant="20" id="vX9-td-SWd"/>
                                         </constraints>
@@ -376,9 +358,9 @@
                                             <rect key="frame" x="64" y="5.5" width="240" height="33"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8K0-CW-Z5u">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="8K0-CW-Z5u">
                                                     <rect key="frame" x="0.0" y="0.0" width="240" height="33"/>
-                                                    <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="19"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>

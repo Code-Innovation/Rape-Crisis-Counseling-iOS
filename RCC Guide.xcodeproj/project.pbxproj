@@ -11,6 +11,7 @@
 		290D38E3203164AE009D6919 /* RCCContentContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 290D38E2203164AE009D6919 /* RCCContentContainerViewController.m */; };
 		290D38E820316557009D6919 /* RCCContentSideMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 290D38E720316557009D6919 /* RCCContentSideMenuViewController.m */; };
 		291EA3F1202DC40F0060A98A /* ContentAppInformation.plist in Resources */ = {isa = PBXBuildFile; fileRef = 291EA3F0202DC40E0060A98A /* ContentAppInformation.plist */; };
+		293920472032EBAC002B33CF /* RCCTextDecorator.m in Sources */ = {isa = PBXBuildFile; fileRef = 293920462032EBAC002B33CF /* RCCTextDecorator.m */; };
 		299E025C2032060300646CFC /* RCCHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 299E025B2032060300646CFC /* RCCHomeViewController.m */; };
 		299E025F2032181400646CFC /* UIFont+RCCApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 299E025E2032181400646CFC /* UIFont+RCCApp.m */; };
 		29C275DE202B19D70054B652 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29C275DD202B19D70054B652 /* Main.storyboard */; };
@@ -42,6 +43,8 @@
 		290D38E620316557009D6919 /* RCCContentSideMenuViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCCContentSideMenuViewController.h; sourceTree = "<group>"; };
 		290D38E720316557009D6919 /* RCCContentSideMenuViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RCCContentSideMenuViewController.m; sourceTree = "<group>"; };
 		291EA3F0202DC40E0060A98A /* ContentAppInformation.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ContentAppInformation.plist; sourceTree = "<group>"; };
+		293920452032EBAC002B33CF /* RCCTextDecorator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCCTextDecorator.h; sourceTree = "<group>"; };
+		293920462032EBAC002B33CF /* RCCTextDecorator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RCCTextDecorator.m; sourceTree = "<group>"; };
 		299E025A2032060300646CFC /* RCCHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCCHomeViewController.h; sourceTree = "<group>"; };
 		299E025B2032060300646CFC /* RCCHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RCCHomeViewController.m; sourceTree = "<group>"; };
 		299E025D2032181400646CFC /* UIFont+RCCApp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIFont+RCCApp.h"; sourceTree = "<group>"; };
@@ -309,6 +312,8 @@
 				29F7CFF8202D63C000B75900 /* RCCContentData.m */,
 				29F7CFFA202D65F800B75900 /* RCCContentProvider.h */,
 				29F7CFFB202D65F800B75900 /* RCCContentProvider.m */,
+				293920452032EBAC002B33CF /* RCCTextDecorator.h */,
+				293920462032EBAC002B33CF /* RCCTextDecorator.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -473,6 +478,7 @@
 				299E025F2032181400646CFC /* UIFont+RCCApp.m in Sources */,
 				29C57BC8202C31B700BEF614 /* UIColor+RCCAppColor.m in Sources */,
 				29C57BC3202C1C8700BEF614 /* RCCAppMenuItem.m in Sources */,
+				293920472032EBAC002B33CF /* RCCTextDecorator.m in Sources */,
 				29C57BF2202C82DE00BEF614 /* RCCWebViewController.m in Sources */,
 				29C57BBC202C101500BEF614 /* RCCContentMainMenuViewController.m in Sources */,
 				29C57BC0202C1BAE00BEF614 /* RCCAppMenuDataSource.m in Sources */,

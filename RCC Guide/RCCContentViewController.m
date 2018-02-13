@@ -8,6 +8,8 @@
 
 #import "RCCContentViewController.h"
 #import "UIFont+RCCApp.h"
+#import "UIColor+RCCAppColor.h"
+#import "RCCTextDecorator.h"
 
 @interface RCCContentViewController ()
 
@@ -16,7 +18,6 @@
 @property (nonatomic, strong) IBOutlet NSLayoutConstraint *nextTopConstraint;
 @property (nonatomic, strong) IBOutlet NSLayoutConstraint *prevBottomConstraint;
 @property (nonatomic, strong) IBOutlet UITextView *contentTextView;
-@property (nonatomic, weak) IBOutlet UILabel *titleLabel;
 
 @end
 
@@ -57,27 +58,42 @@
 {
     [self updateNextPrevButton];
     
+    NSString *topTitle = nil;
     RCCContentData *topItem = self.currentContent;
     do{
-        self.titleLabel.text = topItem.title;
+        topTitle = topItem.title;
         topItem = topItem.parrent;
     }while(topItem != nil);
+    
+    NSMutableString *content = [NSMutableString new];
 
-    NSAttributedString *contentText = [[NSAttributedString alloc] initWithData:[self.currentContent.content dataUsingEncoding:NSUTF8StringEncoding]
-                                                                       options:@{NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType,
-                                                                                 NSCharacterEncodingDocumentAttribute: @(NSUTF8StringEncoding)}
-                                                            documentAttributes:nil
-                                                                         error:nil];
-    NSMutableAttributedString *text = [NSMutableAttributedString new];
-    if((self.currentContent.title != nil) && ![self.titleLabel.text isEqualToString:self.currentContent.title]) {
-        NSAttributedString *titleText = [[NSAttributedString alloc] initWithString:[self.currentContent.title stringByAppendingString:@"\n\n"]
-                                                                        attributes:@{NSFontAttributeName : [UIFont rccAppFont:17]}];
-        [text appendAttributedString:titleText];
+    if(topTitle != nil) {
+        [content appendFormat:@"<span class=\"maintitle\"><p>%@</p></span>", topTitle];
     }
-    if(contentText != nil) {
-        [text appendAttributedString:contentText];
+
+    font-weight: bold
+    
+    if((self.currentContent.title != nil) && ![topTitle isEqualToString:self.currentContent.title]) {
+        [content appendFormat:@"<span class=\"title\"><p>%@</p></span>", self.currentContent.title];
     }
-    self.contentTextView.attributedText = text;
+    
+    if(self.currentContent.content != nil) {
+        NSAttributedString *contentText = [[NSAttributedString alloc] initWithData:[self.currentContent.content dataUsingEncoding:NSUTF8StringEncoding]
+                                                                           options:@{NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType,
+                                                                                     NSCharacterEncodingDocumentAttribute: @(NSUTF8StringEncoding)}
+                                                                documentAttributes:nil
+                                                                             error:nil];
+        [content appendFormat:@"<span class=\"info\">%@</span>", contentText.string];
+        
+    }
+    
+    
+    
+    self.contentTextView.attributedText = [[NSAttributedString alloc] initWithData:[[self containerString:content] dataUsingEncoding:NSUTF8StringEncoding]
+                                                                           options:@{NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType,
+                                                                                     NSCharacterEncodingDocumentAttribute: @(NSUTF8StringEncoding)}
+                                                                documentAttributes:nil
+                                                                             error:nil];
 }
 
 @end

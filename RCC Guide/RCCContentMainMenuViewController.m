@@ -10,6 +10,7 @@
 #import "RCCContentData.h"
 #import "RCCContentProvider.h"
 #import "RCCContentContainerViewController.h"
+#import "UIFont+RCCApp.h"
 
 @interface RCCContentMainMenuViewController ()
 
@@ -94,6 +95,7 @@
                           forState:UIControlStateNormal];
         [button setBackgroundImage:[UIImage imageNamed:@"green_button_small_press"]
                           forState:UIControlStateHighlighted];
+        button.titleLabel.font = [UIFont rccAppFont:17];
         [self.menuButtonContainer addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[button]|"
                                                                                          options:0
                                                                                          metrics:nil
