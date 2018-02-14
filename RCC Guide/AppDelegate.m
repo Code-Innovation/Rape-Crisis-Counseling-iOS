@@ -7,8 +7,11 @@
 //
 
 #import "AppDelegate.h"
+#import "RCCContentProvider.h"
 
 @interface AppDelegate ()
+
+@property (nonatomic, strong) RCCContentProvider *contentProvider;
 
 @end
 
@@ -24,6 +27,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [self customizeUI];
+    self.contentProvider = [[RCCContentProvider alloc] init];
+    [self.contentProvider updateContent];
     return YES;
 }
 

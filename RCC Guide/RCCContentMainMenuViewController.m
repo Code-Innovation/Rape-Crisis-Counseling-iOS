@@ -11,6 +11,7 @@
 #import "RCCContentProvider.h"
 #import "RCCContentContainerViewController.h"
 #import "UIFont+RCCApp.h"
+#import "RCCStaticContentViewController.h"
 
 @interface RCCContentMainMenuViewController ()
 
@@ -56,6 +57,9 @@
             ctrl.title = @"Volunteer Advocate Training";
         }
     }
+    if([segue.destinationViewController isKindOfClass:[RCCStaticContentViewController class]]) {
+        ((RCCStaticContentViewController *)segue.destinationViewController).contentData = [RCCContentProvider appContentFromKey:@"important"];
+    }
 }
 
 - (IBAction)menuUnwindSegue:(UIStoryboardSegue *)segue
@@ -95,7 +99,7 @@
                           forState:UIControlStateNormal];
         [button setBackgroundImage:[UIImage imageNamed:@"green_button_small_press"]
                           forState:UIControlStateHighlighted];
-        button.titleLabel.font = [UIFont rccAppFont:17];
+        button.titleLabel.font = [UIFont rccAppFont:19];
         [self.menuButtonContainer addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[button]|"
                                                                                          options:0
                                                                                          metrics:nil

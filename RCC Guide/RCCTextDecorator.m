@@ -49,7 +49,8 @@
 - (NSAttributedString *)decoratedText
 {
     if(self.lines.count > 0) {
-        return [[NSAttributedString alloc] initWithData:[[self.lines componentsJoinedByString:@"<br><br>"] dataUsingEncoding:NSUTF8StringEncoding]
+        NSString *htmlString = [self.lines componentsJoinedByString:@"\n<br>\n<br>\n"];
+        return [[NSAttributedString alloc] initWithData:[htmlString dataUsingEncoding:NSUTF8StringEncoding]
                                                 options:@{NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType,
                                                           NSCharacterEncodingDocumentAttribute: @(NSUTF8StringEncoding)}
                                      documentAttributes:nil

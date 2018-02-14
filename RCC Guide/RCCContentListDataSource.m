@@ -119,7 +119,7 @@ accessoryButtonTappedForRowWithIndexPath:indexPath];
                                                             forIndexPath:indexPath];
     RCCContentData *item = [self itemAtIndexPath:indexPath];
     cell.textLabel.text = item.title;
-    cell.indentationLevel = item.level;
+    cell.indentationLevel = item.level + 1;
     cell.backgroundColor = [UIColor rccColorFromHex:bgColors[item.level % 4]
                                               alpha:1.0];
     UIView *accessoryView = nil;

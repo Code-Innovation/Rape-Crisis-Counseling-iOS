@@ -26,6 +26,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self updateContent];
+    self.prevButton.titleLabel.numberOfLines = 0;
+    self.nextButton.titleLabel.numberOfLines = 0;
 }
 
 - (void)updateNextPrevButton
@@ -64,36 +66,43 @@
         topTitle = topItem.title;
         topItem = topItem.parrent;
     }while(topItem != nil);
-    
-    NSMutableString *content = [NSMutableString new];
+    RCCTextDecorator *decorator = [[RCCTextDecorator alloc] init];
+    [decorator appendBoldText:topTitle
+                     hexColor:0x414142
+                         size:25];
 
-    if(topTitle != nil) {
-        [content appendFormat:@"<span class=\"maintitle\"><p>%@</p></span>", topTitle];
-    }
-
-    font-weight: bold
-    
     if((self.currentContent.title != nil) && ![topTitle isEqualToString:self.currentContent.title]) {
-        [content appendFormat:@"<span class=\"title\"><p>%@</p></span>", self.currentContent.title];
+        [decorator appendText:self.currentContent.title
+                     hexColor:0x414142
+                         size:26];
     }
+//
+//    NSAttributedString *content = [[NSAttributedString alloc] initWithData:[self.currentContent.content dataUsingEncoding:NSUTF8StringEncoding]
+//                                                                   options:@{NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType,
+//                                                                             NSCharacterEncodingDocumentAttribute: @(NSUTF8StringEncoding)}
+//                                                        documentAttributes:nil
+//                                                                     error:nil];
+//
+//    NSAttributedString *content1 = [[NSAttributedString alloc] initWithData:[content.string dataUsingEncoding:NSUTF8StringEncoding]
+//                                                                    options:@{NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType,
+//                                                                              NSCharacterEncodingDocumentAttribute: @(NSUTF8StringEncoding)}
+//                                                         documentAttributes:nil
+//                                                                      error:nil];
+//
+//    NSData *data = [content1 dataFromRange:NSMakeRange(0, content1.length)
+//                        documentAttributes:@{NSDocumentTypeDocumentAttribute : NSHTMLTextDocumentType}
+//                                     error:nil];
+//
+//    NSString *html = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+//    if(html.length > 0) {
+//        html = [html substringFromIndex:[html rangeOfString:@"<body>"].location + 6];
+//        html = [html substringToIndex:[html rangeOfString:@"</body>"].location];
+//    }
+    [decorator appendText:self.currentContent.content
+                 hexColor:0x5d5d5d
+                     size:19];
     
-    if(self.currentContent.content != nil) {
-        NSAttributedString *contentText = [[NSAttributedString alloc] initWithData:[self.currentContent.content dataUsingEncoding:NSUTF8StringEncoding]
-                                                                           options:@{NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType,
-                                                                                     NSCharacterEncodingDocumentAttribute: @(NSUTF8StringEncoding)}
-                                                                documentAttributes:nil
-                                                                             error:nil];
-        [content appendFormat:@"<span class=\"info\">%@</span>", contentText.string];
-        
-    }
-    
-    
-    
-    self.contentTextView.attributedText = [[NSAttributedString alloc] initWithData:[[self containerString:content] dataUsingEncoding:NSUTF8StringEncoding]
-                                                                           options:@{NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType,
-                                                                                     NSCharacterEncodingDocumentAttribute: @(NSUTF8StringEncoding)}
-                                                                documentAttributes:nil
-                                                                             error:nil];
+    self.contentTextView.attributedText = [decorator decoratedText];
 }
 
 @end

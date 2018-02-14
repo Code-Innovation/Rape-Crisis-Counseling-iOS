@@ -12,6 +12,8 @@
 
 @interface RCCContentProvider : NSObject
 
+- (void)updateContent;
+
 + (NSArray<RCCContentData *> *)advocateTrainingContent;
 
 + (RCCContentData *)appContentFromKey:(NSString *)key;

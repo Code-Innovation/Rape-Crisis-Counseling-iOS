@@ -8,7 +8,22 @@
 
 #import "RCCContentProvider.h"
 
+@interface RCCContentProvider()
+
+@property (nonatomic, strong) NSURLSession *urlSession;
+
+@end
+
 @implementation RCCContentProvider
+
+- (instancetype)init
+{
+    self = [super init];
+    if(self != nil) {
+        _urlSession = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
+    }
+    return self;
+}
 
 + (NSArray<RCCContentData *> *)recursiveParseContent:(NSArray<NSDictionary *> *)contentItems
                                              parrent:(RCCContentData *)parrent
@@ -75,5 +90,43 @@
     }
     return nil;
 }
+
+- (void)updateContent
+{
+    [self checkLastUpdate];
+    [self downloadContent];
+}
+
+#pragma mark - private methods
+
+- (NSString *)contentFolder
+{
+    return @"";
+}
+
+- (void)checkLastUpdate
+{
+    NSMutableURLRequest *req = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://rita.nz/rcc/output.json"]];
+    req.HTTPMethod = @"HEAD";
+    NSURLSessionTask *task = [self.urlSession dataTaskWithRequest:req
+                                                completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+                                                    NSLog(@"Response:%@", response);
+                                                }];
+    [task resume];
+}
+
+- (void)downloadContent
+{
+    NSMutableURLRequest *req = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://rita.nz/rcc/output.json"]];
+    req.HTTPMethod = @"GET";
+    NSURLSessionTask *task = [self.urlSession dataTaskWithRequest:req
+                                                completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+                                                    NSLog(@"Data:%@", [[NSString alloc] initWithData:data
+                                                                                            encoding:NSUTF8StringEncoding]);
+                                                }];
+    [task resume];
+}
+
+
 
 @end

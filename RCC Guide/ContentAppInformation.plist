@@ -30,11 +30,10 @@
 		<key>title</key>
 		<string>Important: Read this First</string>
 		<key>content</key>
-		<string>This training is designed to teach volunteer advocates how to provide competent, effective crisis intervention services to victims and survivors of sexual assault.
-This training is meant to supplement, and not replace, formal training for rape crisis counseling offered at rape crisis centers. Completion does not certify trainees as advocates or counselors.
-\n\nHowever, we acknowledge that because &lt;u&gt;these services may be limited in your community&lt;/u&gt;, if you seek to serve as an advocate but no training is available, it may be helpful to consult this digital training as a guide.
-\n\nThis training presents basic supportive listening skills that can be used without advanced training. This training in no way teaches the skills necessary to provide counseling therapy.
-\n\nBy continuing, you acknowledge that you understand the limits of this digital training.</string>
+		<string>&lt;p&gt;This training is designed to teach volunteer advocates how to provide competent, effective crisis intervention services to victims and survivors of sexual assault. This training is meant to supplement, and not replace, formal training for rape crisis counseling offered at rape crisis centers. Completion does not certify trainees as advocates or counselors.&lt;/p&gt;
+&lt;p&gt;However, we acknowledge that because &lt;u&gt;these services may be limited in your community&lt;/u&gt;, if you seek to serve as an advocate but no training is available, it may be helpful to consult this digital training as a guide.&lt;/p&gt;
+&lt;p&gt;This training presents basic supportive listening skills that can be used without advanced training. This training in no way teaches the skills necessary to provide counseling therapy.&lt;/p&gt;
+&lt;p&gt;By continuing, you acknowledge that you understand the limits of this digital training.&lt;/p&gt;</string>
 	</dict>
 	<key>advocate_training</key>
 	<dict>

@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -35,10 +36,8 @@
                                         <subviews>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" editable="NO" text="Content" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="3PZ-Ul-QbK">
                                                 <rect key="frame" x="25" y="20" width="270" height="39.5"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
                                             </textView>
                                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uwa-pZ-VWj">
                                                 <rect key="frame" x="30" y="99.5" width="260" height="158"/>
@@ -54,7 +53,9 @@
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dZZ-0S-hjo">
                                                         <rect key="frame" x="0.0" y="89" width="260" height="69"/>
                                                         <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="18"/>
-                                                        <state key="normal" image="arrow_prev" backgroundImage="green_button"/>
+                                                        <state key="normal" image="arrow_prev" backgroundImage="grey_button">
+                                                            <color key="titleColor" red="0.36470588235294116" green="0.36470588235294116" blue="0.36470588235294116" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </state>
                                                         <connections>
                                                             <action selector="prevButtonClick:" destination="jMZ-Gq-NNx" eventType="touchUpInside" id="x7Q-Yo-Fy6"/>
                                                         </connections>
@@ -74,7 +75,7 @@
                                                 </constraints>
                                             </view>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="uwa-pZ-VWj" firstAttribute="top" secondItem="3PZ-Ul-QbK" secondAttribute="bottom" constant="40" id="1Yg-di-9b4"/>
                                             <constraint firstItem="uwa-pZ-VWj" firstAttribute="leading" secondItem="xk4-fp-oXm" secondAttribute="leading" constant="30" id="Ax6-wL-E0d"/>
@@ -137,7 +138,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="iLl-hM-Scz">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" id="iLl-hM-Scz">
                                                     <rect key="frame" x="15" y="0.0" width="290" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="17"/>
@@ -172,10 +173,10 @@
             </objects>
             <point key="canvasLocation" x="1416" y="-1034"/>
         </scene>
-        <!--View Controller-->
+        <!--Static Content View Controller-->
         <scene sceneID="oqt-Gw-hFB">
             <objects>
-                <viewController id="Eiu-Cf-65M" sceneMemberID="viewController">
+                <viewController id="Eiu-Cf-65M" customClass="RCCStaticContentViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Unl-s7-sBJ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -187,27 +188,43 @@
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
                                         <subviews>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="Content" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="nEQ-re-yCR">
-                                                <rect key="frame" x="25" y="20" width="270" height="42"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="19"/>
+                                                <rect key="frame" x="25" y="20" width="270" height="39"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gth-Ij-gr9">
-                                                <rect key="frame" x="30" y="82" width="260" height="69"/>
-                                                <state key="normal" image="arrow_prev" backgroundImage="green_button"/>
+                                                <rect key="frame" x="30" y="79" width="260" height="69"/>
+                                                <state key="normal" image="arrow_back" backgroundImage="green_button"/>
                                                 <state key="highlighted" backgroundImage="green_button_press"/>
                                                 <connections>
                                                     <segue destination="zyF-Ka-fvT" kind="unwind" animates="NO" unwindAction="menuUnwindSegue:" id="HPe-pv-cm1"/>
                                                 </connections>
                                             </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Back" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HNl-M7-7gP">
+                                                <rect key="frame" x="90" y="90" width="41" height="23.5"/>
+                                                <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Main menu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HEx-Ny-5XH">
+                                                <rect key="frame" x="90" y="113.5" width="91" height="23.5"/>
+                                                <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="nEQ-re-yCR" firstAttribute="top" secondItem="Yop-x6-jc2" secondAttribute="top" constant="20" id="9i6-9t-alY"/>
+                                            <constraint firstItem="HNl-M7-7gP" firstAttribute="bottom" secondItem="Gth-Ij-gr9" secondAttribute="centerY" id="Bh0-Le-vx2"/>
                                             <constraint firstItem="nEQ-re-yCR" firstAttribute="leading" secondItem="Yop-x6-jc2" secondAttribute="leading" constant="25" id="GkD-wq-Jbk"/>
+                                            <constraint firstItem="HEx-Ny-5XH" firstAttribute="leading" secondItem="HNl-M7-7gP" secondAttribute="leading" id="NnY-LQ-x8z"/>
                                             <constraint firstItem="Gth-Ij-gr9" firstAttribute="centerX" secondItem="Yop-x6-jc2" secondAttribute="centerX" id="U6A-mz-g7E"/>
+                                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Gth-Ij-gr9" secondAttribute="bottom" constant="20" id="WNy-RY-59r"/>
+                                            <constraint firstItem="HEx-Ny-5XH" firstAttribute="top" secondItem="Gth-Ij-gr9" secondAttribute="centerY" id="Y5W-cc-3D2"/>
                                             <constraint firstItem="Gth-Ij-gr9" firstAttribute="leading" secondItem="Yop-x6-jc2" secondAttribute="leading" constant="30" id="gGn-d9-fmY"/>
                                             <constraint firstItem="nEQ-re-yCR" firstAttribute="centerX" secondItem="Yop-x6-jc2" secondAttribute="centerX" id="lZb-Wj-4rk"/>
+                                            <constraint firstItem="HNl-M7-7gP" firstAttribute="leading" secondItem="Gth-Ij-gr9" secondAttribute="leading" constant="60" id="xuc-I7-BGd"/>
                                             <constraint firstItem="Gth-Ij-gr9" firstAttribute="top" secondItem="nEQ-re-yCR" secondAttribute="bottom" constant="20" id="zTc-6S-5OI"/>
                                         </constraints>
                                     </view>
@@ -231,6 +248,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="HmA-2H-ug9"/>
                     </view>
+                    <connections>
+                        <outlet property="textView" destination="nEQ-re-yCR" id="xbm-by-ud6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TZQ-T0-XQT" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="zyF-Ka-fvT" userLabel="Exit" sceneMemberID="exit"/>
@@ -352,14 +372,13 @@
                                             </connections>
                                         </button>
                                     </barButtonItem>
-                                    <barButtonItem width="10" style="plain" systemItem="fixedSpace" id="Sbe-Ir-jf4"/>
                                     <barButtonItem style="plain" id="h2F-Z8-0yF">
                                         <view key="customView" contentMode="scaleToFill" id="NYv-tj-OYU">
-                                            <rect key="frame" x="64" y="5.5" width="240" height="33"/>
+                                            <rect key="frame" x="56" y="5.5" width="240" height="33"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="8K0-CW-Z5u">
-                                                    <rect key="frame" x="0.0" y="0.0" width="240" height="33"/>
+                                                    <rect key="frame" x="10" y="0.0" width="230" height="33"/>
                                                     <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="19"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -370,7 +389,7 @@
                                                 <constraint firstItem="8K0-CW-Z5u" firstAttribute="top" secondItem="NYv-tj-OYU" secondAttribute="top" id="98h-G3-PpI"/>
                                                 <constraint firstAttribute="bottom" secondItem="8K0-CW-Z5u" secondAttribute="bottom" id="WhP-hg-6Jw"/>
                                                 <constraint firstAttribute="trailing" secondItem="8K0-CW-Z5u" secondAttribute="trailing" id="j0y-3c-4il"/>
-                                                <constraint firstItem="8K0-CW-Z5u" firstAttribute="leading" secondItem="NYv-tj-OYU" secondAttribute="leading" id="khz-IM-kIn"/>
+                                                <constraint firstItem="8K0-CW-Z5u" firstAttribute="leading" secondItem="NYv-tj-OYU" secondAttribute="leading" constant="10" id="khz-IM-kIn"/>
                                             </constraints>
                                         </view>
                                     </barButtonItem>
@@ -426,11 +445,13 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arrow_back" width="60" height="60"/>
         <image name="arrow_next" width="60" height="60"/>
         <image name="arrow_prev" width="60" height="60"/>
         <image name="dropdown_icon" width="40" height="40"/>
         <image name="green_button" width="30" height="69"/>
         <image name="green_button_press" width="30" height="69"/>
+        <image name="grey_button" width="30" height="69"/>
         <image name="orange_button_small" width="20" height="39"/>
     </resources>
 </document>
