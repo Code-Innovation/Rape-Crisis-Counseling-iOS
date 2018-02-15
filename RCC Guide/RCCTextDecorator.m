@@ -50,11 +50,16 @@
 {
     if(self.lines.count > 0) {
         NSString *htmlString = [self.lines componentsJoinedByString:@"\n<br>\n<br>\n"];
-        return [[NSAttributedString alloc] initWithData:[htmlString dataUsingEncoding:NSUTF8StringEncoding]
-                                                options:@{NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType,
-                                                          NSCharacterEncodingDocumentAttribute: @(NSUTF8StringEncoding)}
-                                     documentAttributes:nil
-                                                  error:nil];
+        
+        NSMutableAttributedString *res =  [[NSMutableAttributedString alloc] initWithData:[htmlString dataUsingEncoding:NSUTF8StringEncoding]
+                                                                                  options:@{NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType,
+                                                                                            NSCharacterEncodingDocumentAttribute: @(NSUTF8StringEncoding)}
+                                                                       documentAttributes:nil
+                                                                                    error:nil];
+        while((res.length > 0) && [@[@"\n", @"\r"] containsObject:[res.string substringFromIndex:res.length - 1]]) {
+            [res deleteCharactersInRange:NSMakeRange(res.length - 1, 1)];
+        }
+        return res;
     }
     
     return nil;

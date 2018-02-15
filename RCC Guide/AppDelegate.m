@@ -32,4 +32,9 @@
     return YES;
 }
 
+- (void)applicationWillEnterForeground:(UIApplication *)application
+{
+    [self.contentProvider updateContent];
+}
+
 @end

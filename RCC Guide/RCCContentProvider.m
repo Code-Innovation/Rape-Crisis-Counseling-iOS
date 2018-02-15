@@ -14,7 +14,22 @@
 
 @end
 
+static NSString * const kContentFileName = @"content.json";
+static NSString * const kContentURLString = @"http://rita.nz/rcc/output.json";
+
 @implementation RCCContentProvider
+
++ (void)initialize
+{
+    [super initialize];
+    NSFileManager *fm = [NSFileManager defaultManager];
+    if(![fm fileExistsAtPath:[self contentFolder]]) {
+        [fm createDirectoryAtPath:[self contentFolder]
+      withIntermediateDirectories:YES
+                       attributes:nil
+                            error:nil];
+    }
+}
 
 - (instancetype)init
 {
@@ -23,6 +38,78 @@
         _urlSession = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
     }
     return self;
+}
+
++ (NSArray<RCCContentData *> *)advocateTrainingContent
+{
+    
+    NSData *data = nil;//[NSData dataWithContentsOfFile:[[RCCContentProvider contentFolder] stringByAppendingPathComponent:kContentFileName]];
+    if(data == nil) {
+        data = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:kContentFileName
+                                                                              ofType:nil]];
+    }
+                    
+    return [self parseJSONContent:data];
+}
+
++ (RCCContentData *)appContentFromKey:(NSString *)key
+{
+    NSDictionary *info = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"ContentAppInformation"
+                                                                                                    ofType:@"plist"]];
+    NSDictionary *data = info[key];
+    if(data != nil) {
+        RCCContentData *item = [[RCCContentData alloc] init];
+        item.title = data[@"title"];
+        item.content = data[@"content"];
+        return item;
+    }
+    return nil;
+}
+
+- (void)updateContent
+{
+    NSUserDefaults *defs = [NSUserDefaults standardUserDefaults];
+    NSURL *contentURL = [NSURL URLWithString:kContentURLString];
+    __weak typeof(self)weakSelf = self;
+    NSFileManager *fm = [NSFileManager defaultManager];
+    NSString *path = [[RCCContentProvider contentFolder] stringByAppendingPathComponent:kContentFileName];
+    __block NSDate *lastUpdate = [defs objectForKey:@"LastUpdate"];
+    void(^downloadBlock)(NSURL *url)= ^(NSURL *url) {
+        [weakSelf downloadContent:contentURL
+                       completion:^(NSData *contentData, NSError *error) {
+                           NSLog(@"Download!!!");
+                           if((error == nil) && (contentData != nil)){
+                               [fm removeItemAtPath:path
+                                              error:nil];
+                               [contentData writeToFile:path
+                                             atomically:YES];
+                               [defs setObject:lastUpdate
+                                        forKey:@"LastUpdate"];
+                               [defs synchronize];
+                           }
+                       }];
+    };
+    [self checkLastUpdate:contentURL
+               completion:^(NSDate *lastModification, NSError *error) {
+                   NSLog(@"Check");
+                   if((lastUpdate == nil) || [lastModification compare:lastUpdate] == NSOrderedDescending) {
+                       downloadBlock(contentURL);
+                   }
+                   lastUpdate = lastModification;
+               }];
+}
+
+#pragma mark - private methods
+
++ (NSArray<RCCContentData *> *)parseJSONContent:(NSData *)jsonData
+{
+    NSDictionary *jsonDict = [NSJSONSerialization JSONObjectWithData:jsonData
+                                                             options:0
+                                                               error:nil];
+    NSArray *contentItems = jsonDict[@"curriculum"][@"content"];
+    return [self recursiveParseContent:contentItems
+                               parrent:nil
+                                 level:0];
 }
 
 + (NSArray<RCCContentData *> *)recursiveParseContent:(NSArray<NSDictionary *> *)contentItems
@@ -58,71 +145,42 @@
     return items;
 }
 
-+ (NSArray<RCCContentData *> *)parseJSONContent:(NSData *)jsonData
++ (NSString *)contentFolder
 {
-    NSDictionary *jsonDict = [NSJSONSerialization JSONObjectWithData:jsonData
-                                                             options:0
-                                                               error:nil];
-    NSArray *contentItems = jsonDict[@"curriculum"][@"content"];
-    return [self recursiveParseContent:contentItems
-                               parrent:nil
-                                 level:0];
+    return [NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES).firstObject stringByAppendingString:@"Content"];
 }
 
-+ (NSArray<RCCContentData *> *)advocateTrainingContent
+- (void)checkLastUpdate:(NSURL *)url
+             completion:(void(^)(NSDate *lastModification, NSError *error))completion
 {
-    NSData *data = [NSData dataWithContentsOfURL:[[NSBundle mainBundle] URLForResource:@"output"
-                                                                         withExtension:@"json"]];
-                    
-    return [self parseJSONContent:data];
-}
-
-+ (RCCContentData *)appContentFromKey:(NSString *)key
-{
-    NSDictionary *info = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"ContentAppInformation"
-                                                                                                    ofType:@"plist"]];
-    NSDictionary *data = info[key];
-    if(data != nil) {
-        RCCContentData *item = [[RCCContentData alloc] init];
-        item.title = data[@"title"];
-        item.content = data[@"content"];
-        return item;
-    }
-    return nil;
-}
-
-- (void)updateContent
-{
-    [self checkLastUpdate];
-    [self downloadContent];
-}
-
-#pragma mark - private methods
-
-- (NSString *)contentFolder
-{
-    return @"";
-}
-
-- (void)checkLastUpdate
-{
-    NSMutableURLRequest *req = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://rita.nz/rcc/output.json"]];
+    NSMutableURLRequest *req = [NSMutableURLRequest requestWithURL:url];
     req.HTTPMethod = @"HEAD";
+    static NSDateFormatter *dateFormatter = nil;
+    if(dateFormatter == nil) {
+        dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setDateFormat:@"EEE, dd MMM yyyy HH:mm:ss ZZZ"];
+    }
     NSURLSessionTask *task = [self.urlSession dataTaskWithRequest:req
                                                 completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-                                                    NSLog(@"Response:%@", response);
+                                                    NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
+                                                    NSString *dateStr = httpResponse.allHeaderFields[@"Last-Modified"];
+                                                    if(completion != nil) {
+                                                        completion([dateFormatter dateFromString:dateStr], error);
+                                                    }
                                                 }];
     [task resume];
 }
 
-- (void)downloadContent
+- (void)downloadContent:(NSURL *)url
+             completion:(void(^)(NSData *contentData, NSError *error))completion
 {
-    NSMutableURLRequest *req = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://rita.nz/rcc/output.json"]];
+    NSMutableURLRequest *req = [NSMutableURLRequest requestWithURL:url];
     req.HTTPMethod = @"GET";
     NSURLSessionTask *task = [self.urlSession dataTaskWithRequest:req
                                                 completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-                                                    NSLog(@"Data:%@", [[NSString alloc] initWithData:data
-                                                                                            encoding:NSUTF8StringEncoding]);
+                                                    if(completion != nil) {
+                                                        completion(data, error);
+                                                    }
                                                 }];
     [task resume];
 }

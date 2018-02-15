@@ -27,7 +27,12 @@
     [super viewDidLoad];
     [self updateContent];
     self.prevButton.titleLabel.numberOfLines = 0;
+    self.prevButton.titleLabel.minimumScaleFactor = 0.5;
+    self.prevButton.titleLabel.adjustsFontSizeToFitWidth = YES;
     self.nextButton.titleLabel.numberOfLines = 0;
+    self.nextButton.titleLabel.minimumScaleFactor = 0.5;
+    self.nextButton.titleLabel.adjustsFontSizeToFitWidth = YES;
+
 }
 
 - (void)updateNextPrevButton
@@ -76,31 +81,15 @@
                      hexColor:0x414142
                          size:26];
     }
-//
-//    NSAttributedString *content = [[NSAttributedString alloc] initWithData:[self.currentContent.content dataUsingEncoding:NSUTF8StringEncoding]
-//                                                                   options:@{NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType,
-//                                                                             NSCharacterEncodingDocumentAttribute: @(NSUTF8StringEncoding)}
-//                                                        documentAttributes:nil
-//                                                                     error:nil];
-//
-//    NSAttributedString *content1 = [[NSAttributedString alloc] initWithData:[content.string dataUsingEncoding:NSUTF8StringEncoding]
-//                                                                    options:@{NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType,
-//                                                                              NSCharacterEncodingDocumentAttribute: @(NSUTF8StringEncoding)}
-//                                                         documentAttributes:nil
-//                                                                      error:nil];
-//
-//    NSData *data = [content1 dataFromRange:NSMakeRange(0, content1.length)
-//                        documentAttributes:@{NSDocumentTypeDocumentAttribute : NSHTMLTextDocumentType}
-//                                     error:nil];
-//
-//    NSString *html = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-//    if(html.length > 0) {
-//        html = [html substringFromIndex:[html rangeOfString:@"<body>"].location + 6];
-//        html = [html substringToIndex:[html rangeOfString:@"</body>"].location];
-//    }
-    [decorator appendText:self.currentContent.content
+
+    NSAttributedString *content = [[NSAttributedString alloc] initWithData:[self.currentContent.content dataUsingEncoding:NSUTF8StringEncoding]
+                                                                   options:@{NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType,
+                                                                             NSCharacterEncodingDocumentAttribute: @(NSUTF8StringEncoding)}
+                                                        documentAttributes:nil
+                                                                     error:nil];
+    [decorator appendText:content.string
                  hexColor:0x5d5d5d
-                     size:19];
+                     size:17];
     
     self.contentTextView.attributedText = [decorator decoratedText];
 }
