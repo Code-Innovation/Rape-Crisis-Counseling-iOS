@@ -22,6 +22,22 @@
 
 @implementation RCCMainSideMenuViewController
 
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(updateContent:)
+                                                 name:kContentUpdateNotification
+                                               object:nil];
+}
+
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:kContentUpdateNotification
+                                                  object:nil];
+}
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue
                  sender:(id)sender
 {
@@ -71,6 +87,13 @@
     } else if ([type isEqualToString:kContentTypeSurvivorResource]) {
         ctrl.contentData = [RCCContentProvider survivorResourceContent];
     }
+    self.contentNavigationController.viewControllers = @[ctrl];
+}
+
+- (void)updateContent:(NSNotification *)notif
+{
+    UIViewController *ctrl = [[UIStoryboard storyboardWithName:@"Main"
+                                                        bundle:nil] instantiateViewControllerWithIdentifier:@"RCCHomeViewController"];
     self.contentNavigationController.viewControllers = @[ctrl];
 }
 

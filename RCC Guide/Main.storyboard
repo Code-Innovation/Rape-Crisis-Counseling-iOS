@@ -55,7 +55,7 @@
         <!--RCC-->
         <scene sceneID="TbQ-gj-7Ro">
             <objects>
-                <viewController title="RCC" id="ZSM-a7-kaj" customClass="RCCHomeViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RCCHomeViewController" title="RCC" id="ZSM-a7-kaj" customClass="RCCHomeViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HxX-vi-gtn">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

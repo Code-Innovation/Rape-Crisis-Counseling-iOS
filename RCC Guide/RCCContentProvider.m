@@ -15,6 +15,8 @@
 
 @end
 
+NSString * const kContentUpdateNotification = @"ContentUpdateNotification";
+
 static NSString * const kAdvocateTrainingFileName = @"advocate-training.json";
 static NSString * const kAdvocateResourceFileName = @"advocate-resource.json";
 static NSString * const kSurvivorResourceFileName = @"survivor-resource.json";
@@ -92,10 +94,12 @@ static NSString * const kContentURLString = @"https://s3-us-west-2.amazonaws.com
 {
     __weak typeof(self)weakSelf = self;
     NSFileManager *fm = [NSFileManager defaultManager];
-
+    __block NSInteger downloadCount = 0;
     void(^downloadBlock)(NSURL *, NSDate *)= ^(NSURL *url, NSDate *lastModification) {
+        
         [weakSelf downloadContent:url
                        completion:^(NSData *contentData, NSError *error) {
+                           downloadCount --;
                            if((error == nil) && (contentData != nil)){
                                NSString *path = [[RCCContentProvider contentFolder] stringByAppendingPathComponent:[url lastPathComponent]];
                                [fm removeItemAtPath:path
@@ -105,10 +109,17 @@ static NSString * const kContentURLString = @"https://s3-us-west-2.amazonaws.com
                                [fm setAttributes:@{NSFileModificationDate : lastModification}
                                     ofItemAtPath:path
                                            error:nil];
+                               if(downloadCount == 0) {
+                                   dispatch_async(dispatch_get_main_queue(), ^{
+                                       [[NSNotificationCenter defaultCenter] postNotificationName:kContentUpdateNotification
+                                                                                           object:nil];
+                                   });
+                               }
                            }
                        }];
     };
     NSArray *files = @[kAdvocateTrainingFileName, kAdvocateResourceFileName, kSurvivorResourceFileName];
+    downloadCount = files.count;
     for(NSString *file in files) {
         NSURL *contentURL = [NSURL URLWithString:kContentURLString];
         contentURL = [contentURL URLByAppendingPathComponent:file];
@@ -119,6 +130,8 @@ static NSString * const kContentURLString = @"https://s3-us-west-2.amazonaws.com
                                                                  error:nil][NSFileModificationDate];
                        if((lastUpdate == nil) || [lastModification compare:lastUpdate] == NSOrderedDescending) {
                            downloadBlock(contentURL, lastModification);
+                       } else {
+                           downloadCount --;
                        }
                    }];
     }

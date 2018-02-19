@@ -10,6 +10,8 @@
 
 #import "RCCContentData.h"
 
+extern NSString * const kContentUpdateNotification;
+
 @interface RCCContentProvider : NSObject
 
 - (void)updateContent;
