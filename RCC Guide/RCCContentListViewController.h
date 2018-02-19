@@ -14,13 +14,13 @@
 @protocol RCCContentListViewControllerDelegate<NSObject>
 
 - (void)contentListViewController:(RCCContentListViewController *)ctrl
-                  selectedContent:(RCCContentData *)content;
+                  selectedContent:(RCCContentItem *)content;
 
 @end
 
 @interface RCCContentListViewController : UIViewController
 
-@property (nonatomic, strong) NSArray<RCCContentData *> *contentItems;
+@property (nonatomic, strong) RCCContentData *contentData;
 @property (nonatomic, weak) id<RCCContentListViewControllerDelegate> delegate;
 
 @end

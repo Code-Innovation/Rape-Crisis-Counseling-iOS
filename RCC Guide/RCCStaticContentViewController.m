@@ -20,11 +20,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     RCCTextDecorator *decorator = [[RCCTextDecorator alloc] init];
-    [decorator appendBoldText:self.contentData.title
+    [decorator appendBoldText:self.contentItem.title
                      hexColor:0x414142
                          size:25];
     
-    [decorator appendText:self.contentData.content
+    [decorator appendText:self.contentItem.content
                  hexColor:0x5d5d5d
                      size:19];
     

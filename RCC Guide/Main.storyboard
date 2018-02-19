@@ -90,7 +90,7 @@
                                                             <action selector="advocateTrainingClick:" destination="ZSM-a7-kaj" eventType="touchUpInside" id="wOx-cM-Rf5"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="usv-sj-CBi">
+                                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="usv-sj-CBi">
                                                         <rect key="frame" x="0.0" y="0.0" width="354" height="69"/>
                                                         <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="17"/>
                                                         <state key="normal" title="In-Hand Resource for Survivors" backgroundImage="green_button"/>
@@ -98,8 +98,11 @@
                                                             <color key="titleColor" red="0.42745098039215684" green="0.41960784313725491" blue="0.41960784313725491" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
                                                         <state key="highlighted" backgroundImage="green_button_press"/>
+                                                        <connections>
+                                                            <action selector="survivorResourceClick:" destination="ZSM-a7-kaj" eventType="touchUpInside" id="fOq-9y-gaq"/>
+                                                        </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CfG-Lg-eBE">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CfG-Lg-eBE">
                                                         <rect key="frame" x="0.0" y="89" width="354" height="69"/>
                                                         <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="17"/>
                                                         <state key="normal" title="In-Hand Resource for Advocates" backgroundImage="green_button"/>
@@ -107,6 +110,9 @@
                                                             <color key="titleColor" red="0.42745098039215684" green="0.41960784313725491" blue="0.41960784313725491" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
                                                         <state key="highlighted" backgroundImage="green_button_press"/>
+                                                        <connections>
+                                                            <action selector="advocateResourceClick:" destination="ZSM-a7-kaj" eventType="touchUpInside" id="hVE-8Z-zcx"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>

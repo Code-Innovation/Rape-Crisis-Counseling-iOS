@@ -14,11 +14,11 @@
 
 - (instancetype)init NS_UNAVAILABLE;
 
-- (instancetype)initWithContentData:(NSArray<RCCContentData *> *)contentData;
+- (instancetype)initWithContentData:(RCCContentData *)contentData;
 
 - (NSRange)expandItemAtIndexPath:(NSIndexPath *)indexPath;
 - (NSRange)collapseItemIndexPath:(NSIndexPath *)indexPath;
-- (RCCContentData *)itemAtIndexPath:(NSIndexPath *)indexPath;
+- (RCCContentItem *)itemAtIndexPath:(NSIndexPath *)indexPath;
 - (BOOL)isExpanded:(NSIndexPath *)indexPath;
 
 @end

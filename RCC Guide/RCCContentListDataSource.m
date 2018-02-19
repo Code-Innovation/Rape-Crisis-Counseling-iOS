@@ -11,18 +11,18 @@
 
 @interface RCCContentListDataSource()
 
-@property (nonatomic, strong) NSMutableArray<RCCContentData *> *listItems;
-@property (nonatomic, strong) NSMutableSet<RCCContentData *> *expandedItems;
+@property (nonatomic, strong) NSMutableArray<RCCContentItem *> *listItems;
+@property (nonatomic, strong) NSMutableSet<RCCContentItem *> *expandedItems;
 
 @end
 
 @implementation RCCContentListDataSource
 
-- (instancetype)initWithContentData:(NSArray<RCCContentData *> *)contentData
+- (instancetype)initWithContentData:(RCCContentData *)contentData
 {
     self = [super init];
     if(self != nil) {
-        _listItems = [NSMutableArray arrayWithArray:contentData];
+        _listItems = [NSMutableArray arrayWithArray:contentData.items];
         _expandedItems = [NSMutableSet new];
     }
     return self;
@@ -31,7 +31,7 @@
 - (void)expandRecursive:(NSMutableArray *)itemsToExpand
                subItems:(NSArray *)subitems
 {
-    for(RCCContentData *item in subitems) {
+    for(RCCContentItem *item in subitems) {
         [itemsToExpand addObject:item];
         if([self.expandedItems containsObject:item]) {
             [self expandRecursive:itemsToExpand
@@ -42,7 +42,7 @@
 
 - (NSRange)expandItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    RCCContentData *item = [self itemAtIndexPath:indexPath];
+    RCCContentItem *item = [self itemAtIndexPath:indexPath];
     if([self.expandedItems containsObject:item]) {
         return NSMakeRange(0, 0);
     } else {
@@ -61,7 +61,7 @@
 
 - (NSRange)collapseItemIndexPath:(NSIndexPath *)indexPath
 {
-    RCCContentData *item = [self itemAtIndexPath:indexPath];
+    RCCContentItem *item = [self itemAtIndexPath:indexPath];
     if(![self.expandedItems containsObject:item]) {
         return NSMakeRange(0, 0);
     } else {
@@ -79,14 +79,14 @@
     return range;
 }
 
-- (RCCContentData *)itemAtIndexPath:(NSIndexPath *)indexPath
+- (RCCContentItem *)itemAtIndexPath:(NSIndexPath *)indexPath
 {
     return self.listItems[indexPath.row];
 }
 
 - (BOOL)isExpanded:(NSIndexPath *)indexPath
 {
-    RCCContentData *item = [self itemAtIndexPath:indexPath];
+    RCCContentItem *item = [self itemAtIndexPath:indexPath];
     return [self.expandedItems containsObject:item];
 }
 
@@ -117,9 +117,9 @@ accessoryButtonTappedForRowWithIndexPath:indexPath];
     static unsigned long bgColors [4] = {0x414142, 0x666666, 0x4b4b4c, 0x424242};
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ContentListCell"
                                                             forIndexPath:indexPath];
-    RCCContentData *item = [self itemAtIndexPath:indexPath];
+    RCCContentItem *item = [self itemAtIndexPath:indexPath];
     cell.textLabel.text = item.title;
-    cell.indentationLevel = item.level + 1;
+    cell.indentationLevel = item.level + 2;
     cell.backgroundColor = [UIColor rccColorFromHex:bgColors[item.level % 4]
                                               alpha:1.0];
     UIView *accessoryView = nil;

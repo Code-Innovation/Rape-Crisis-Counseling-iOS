@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RCCContentData.h"
 
 @interface RCCContentMainMenuViewController : UIViewController
 
-@property(nonatomic)NSString *contentType;
+@property(nonatomic)RCCContentData *contentData;
 
 @end

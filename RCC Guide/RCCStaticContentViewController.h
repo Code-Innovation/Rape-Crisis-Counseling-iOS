@@ -11,6 +11,6 @@
 
 @interface RCCStaticContentViewController : UIViewController
 
-@property (nonatomic, strong) RCCContentData *contentData;
+@property (nonatomic, strong) RCCContentItem *contentItem;
 
 @end

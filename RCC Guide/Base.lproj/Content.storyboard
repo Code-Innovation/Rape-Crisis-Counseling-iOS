@@ -278,7 +278,7 @@
                                                 <color key="textColor" red="0.25490196078431371" green="0.25490196078431371" blue="0.25882352941176467" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="66E-B3-hEw">
+                                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="66E-B3-hEw">
                                                 <rect key="frame" x="30" y="124.5" width="260" height="39"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NQd-N9-rdW">
@@ -294,6 +294,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="bottom" secondItem="NQd-N9-rdW" secondAttribute="bottom" priority="250" id="Hah-Wb-Xcz"/>
                                                     <constraint firstItem="NQd-N9-rdW" firstAttribute="leading" secondItem="66E-B3-hEw" secondAttribute="leading" id="IKM-R3-5zP"/>
+                                                    <constraint firstItem="NQd-N9-rdW" firstAttribute="bottom" secondItem="66E-B3-hEw" secondAttribute="top" priority="250" id="LhT-cs-Hr0"/>
                                                     <constraint firstAttribute="trailing" secondItem="NQd-N9-rdW" secondAttribute="trailing" id="P5I-I1-rUA"/>
                                                     <constraint firstItem="NQd-N9-rdW" firstAttribute="top" secondItem="66E-B3-hEw" secondAttribute="top" id="udg-9o-Zge"/>
                                                 </constraints>
@@ -342,6 +343,7 @@
                     <connections>
                         <outlet property="contentLabel" destination="pOu-ci-10d" id="Mdb-kl-33o"/>
                         <outlet property="importantButton" destination="NQd-N9-rdW" id="Opo-i0-7ZX"/>
+                        <outlet property="importantButtonConstraint" destination="udg-9o-Zge" id="dVs-5V-nVf"/>
                         <outlet property="menuButtonContainer" destination="66E-B3-hEw" id="N4c-b4-SGk"/>
                         <outlet property="titleLabel" destination="uDS-8o-1hA" id="eUk-7W-viU"/>
                         <segue destination="m7U-kF-cGm" kind="show" identifier="showContent" id="HXZ-fP-gDW"/>

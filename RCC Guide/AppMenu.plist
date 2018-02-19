@@ -5,19 +5,19 @@
 	<array>
 		<dict>
 			<key>enabled</key>
-			<false/>
+			<true/>
 			<key>title</key>
 			<string>In-Hand Resource for Advocates</string>
 			<key>action</key>
-			<string>advocates_resource</string>
+			<string>advocate_resource</string>
 		</dict>
 		<dict>
 			<key>enabled</key>
-			<false/>
+			<true/>
 			<key>title</key>
-			<string>In-Hand Resource for Survivours</string>
+			<string>In-Hand Resource for Survivors</string>
 			<key>action</key>
-			<string>survivours_resource</string>
+			<string>survivor_resource</string>
 		</dict>
 		<dict>
 			<key>enabled</key>

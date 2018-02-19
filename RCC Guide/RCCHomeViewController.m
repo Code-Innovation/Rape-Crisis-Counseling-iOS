@@ -8,10 +8,11 @@
 
 #import "RCCHomeViewController.h"
 #import "RCCContentMainMenuViewController.h"
+#import "RCCContentProvider.h"
 
 @interface RCCHomeViewController ()
 
-@property (nonatomic, copy) NSString *contentType;
+@property (nonatomic, strong) RCCContentData *contenData;
 
 @end
 
@@ -24,13 +25,27 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if([segue.destinationViewController isKindOfClass:[RCCContentMainMenuViewController class]]) {
-        ((RCCContentMainMenuViewController *)segue.destinationViewController).contentType = self.contentType;
+        ((RCCContentMainMenuViewController *)segue.destinationViewController).contentData = self.contenData;
     }
 }
 
 - (IBAction)advocateTrainingClick:(id)sender
 {
-    self.contentType = @"advocate_training";
+    self.contenData = [RCCContentProvider advocateTrainingContent];
+    [self performSegueWithIdentifier:@"HomeContentSegue"
+                              sender:self];
+}
+
+- (IBAction)advocateResourceClick:(id)sender
+{
+    self.contenData = [RCCContentProvider advocateResourceContent];
+    [self performSegueWithIdentifier:@"HomeContentSegue"
+                              sender:self];
+}
+
+- (IBAction)survivorResourceClick:(id)sender
+{
+    self.contenData = [RCCContentProvider survivorResourceContent];
     [self performSegueWithIdentifier:@"HomeContentSegue"
                               sender:self];
 }

@@ -11,6 +11,8 @@
 #import "RCCWebViewController.h"
 #import "RCCContentProvider.h"
 #import "RCCContentMainMenuViewController.h"
+#import "RCCTypes.h"
+#import "RCCContentProvider.h"
 
 @interface RCCMainSideMenuViewController ()<UINavigationControllerDelegate, RCCAppMenuViewControllerDelegate>
 
@@ -19,11 +21,6 @@
 @end
 
 @implementation RCCMainSideMenuViewController
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-   
-}
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue
                  sender:(id)sender
@@ -57,8 +54,8 @@
 - (void)showInfoContent:(NSString *)type
 {
     RCCWebViewController *ctrl = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"RCCWebViewController"];
-    RCCContentData *item = [RCCContentProvider appContentFromKey:type];
-    ctrl.contentData = item;
+    RCCContentItem *item = [RCCContentProvider appContentFromKey:type];
+    ctrl.contentItem = item;
     ctrl.title = item.title;
     [self.contentNavigationController pushViewController:ctrl
                                                 animated:YES];
@@ -67,7 +64,13 @@
 - (void)showContentMenuController:(NSString *)type
 {
     RCCContentMainMenuViewController *ctrl = [[UIStoryboard storyboardWithName:@"Content" bundle:nil] instantiateViewControllerWithIdentifier:@"RCCContentMainMenuViewController"];
-    ctrl.contentType = type;
+    if([type isEqualToString:kContentTypeAdvocateTraining]) {
+        ctrl.contentData = [RCCContentProvider advocateTrainingContent];
+    } else if([type isEqualToString:kContentTypeAdvocateResource]) {
+        ctrl.contentData = [RCCContentProvider advocateResourceContent];
+    } else if ([type isEqualToString:kContentTypeSurvivorResource]) {
+        ctrl.contentData = [RCCContentProvider survivorResourceContent];
+    }
     self.contentNavigationController.viewControllers = @[ctrl];
 }
 
@@ -111,7 +114,7 @@
     if([@[@"resources" , @"about"] containsObject:item.action]) {
         [self showInfoContent:item.action];
     }
-    if([@[@"advocate_training"] containsObject:item.action]) {
+    if([@[kContentTypeAdvocateTraining, kContentTypeAdvocateResource, kContentTypeSurvivorResource] containsObject:item.action]) {
         [self showContentMenuController:item.action];
     }
 }

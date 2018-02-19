@@ -12,7 +12,7 @@
 
 @interface RCCContentSideMenuViewController : LGSideMenuController
 
-@property (nonatomic, strong) RCCContentData *currentContent;
-@property (nonatomic, strong) NSArray<RCCContentData *> *contentItems;
+@property (nonatomic, strong) RCCContentItem *currentItem;
+@property (nonatomic, strong) RCCContentData *contentData;
 
 @end

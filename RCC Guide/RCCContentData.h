@@ -7,15 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "RCCContentItem.h"
 
 @interface RCCContentData : NSObject
 
 @property(nonatomic, copy) NSString *title;
-@property(nonatomic, copy) NSString *content;
-@property(nonatomic, copy) NSArray<RCCContentData *> *subsections;
-@property(nonatomic, weak) RCCContentData *parrent;
-@property(nonatomic, weak) RCCContentData *nextItem;
-@property(nonatomic, weak) RCCContentData *prevItem;
-@property(nonatomic) NSInteger level;
+@property(nonatomic, strong) NSArray<RCCContentItem *> *items;
+@property(nonatomic, strong) NSString *contentType;
 
 @end

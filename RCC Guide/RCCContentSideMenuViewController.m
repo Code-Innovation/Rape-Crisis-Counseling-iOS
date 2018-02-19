@@ -19,18 +19,18 @@
 
 @implementation RCCContentSideMenuViewController
 
-- (void)setCurrentContent:(RCCContentData *)currentContent
+- (void)setCurrentItem:(RCCContentItem *)currentItem
 {
-    _currentContent = currentContent;
-    if(currentContent != nil) {
-        self.contentContainerViewController.currentContent = currentContent;
+    _currentItem = currentItem;
+    if(currentItem != nil) {
+        self.contentContainerViewController.currentContent = currentItem;
     }
 }
 
-- (void)setContentItems:(NSArray<RCCContentData *> *)contentItems
+- (void)setContentData:(RCCContentData *)contentData
 {
-    _contentItems = contentItems;
-    self.menuListViewController.contentItems = contentItems;
+    _contentData = contentData;
+    self.menuListViewController.contentData = contentData;
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -41,15 +41,15 @@
         RCCContentListViewController *ctrl = (RCCContentListViewController *)segue.destinationViewController;
         self.menuListViewController = ctrl;
         ctrl.delegate = self;
-        ctrl.contentItems = self.contentItems;
+        ctrl.contentData = self.contentData;
     }
     if([segue.destinationViewController isKindOfClass:[RCCContentViewController class]]) {
         RCCContentViewController *ctrl = (RCCContentViewController *)segue.destinationViewController;
         self.contentContainerViewController = ctrl;
-        if(self.currentContent != nil) {
-            ctrl.currentContent = self.currentContent;
+        if(self.currentItem != nil) {
+            ctrl.currentContent = self.currentItem;
         } else {
-            ctrl.currentContent = self.contentItems.firstObject;
+            ctrl.currentContent = self.contentData.items.firstObject;
         }
     }
 }
@@ -57,9 +57,9 @@
 #pragma mark - RCCContentListViewControllerDelegate
 
 - (void)contentListViewController:(RCCContentListViewController *)ctrl
-                  selectedContent:(RCCContentData *)content
+                  selectedContent:(RCCContentItem *)content
 {
-    self.currentContent = content;
+    self.currentItem = content;
     [self hideLeftViewAnimated];
 }
 

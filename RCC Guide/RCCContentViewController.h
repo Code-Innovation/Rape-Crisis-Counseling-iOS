@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "RCCContentData.h"
+#import "RCCContentItem.h"
 
 @interface RCCContentViewController : UIViewController
 
-@property(nonatomic, strong) RCCContentData *currentContent;
+@property(nonatomic, strong) RCCContentItem *currentContent;
 
 @end

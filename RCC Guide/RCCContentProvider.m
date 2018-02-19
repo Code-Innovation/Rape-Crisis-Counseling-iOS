@@ -7,6 +7,7 @@
 //
 
 #import "RCCContentProvider.h"
+#import "RCCTypes.h"
 
 @interface RCCContentProvider()
 
@@ -14,8 +15,10 @@
 
 @end
 
-static NSString * const kContentFileName = @"content.json";
-static NSString * const kContentURLString = @"http://rita.nz/rcc/output.json";
+static NSString * const kAdvocateTrainingFileName = @"advocate-training.json";
+static NSString * const kAdvocateResourceFileName = @"advocate-resource.json";
+static NSString * const kSurvivorResourceFileName = @"survivor-resource.json";
+static NSString * const kContentURLString = @"https://s3-us-west-2.amazonaws.com/rcc-json/v1/english";
 
 @implementation RCCContentProvider
 
@@ -40,25 +43,44 @@ static NSString * const kContentURLString = @"http://rita.nz/rcc/output.json";
     return self;
 }
 
-+ (NSArray<RCCContentData *> *)advocateTrainingContent
++ (RCCContentData*)contentFrom:(NSString *)file
 {
-    
-    NSData *data = nil;//[NSData dataWithContentsOfFile:[[RCCContentProvider contentFolder] stringByAppendingPathComponent:kContentFileName]];
+    NSData *data = [NSData dataWithContentsOfFile:[[RCCContentProvider contentFolder] stringByAppendingPathComponent:file]];
     if(data == nil) {
-        data = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:kContentFileName
+        data = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:file
                                                                               ofType:nil]];
     }
-                    
     return [self parseJSONContent:data];
 }
+    
++ (RCCContentData*)advocateTrainingContent
+{
+    RCCContentData *data = [self contentFrom:kAdvocateTrainingFileName];
+    data.contentType = kContentTypeAdvocateTraining;
+    return data;
+}
 
-+ (RCCContentData *)appContentFromKey:(NSString *)key
++ (RCCContentData*)advocateResourceContent
+{
+    RCCContentData *data = [self contentFrom:kAdvocateResourceFileName];
+    data.contentType = kContentTypeAdvocateResource;
+    return data;
+}
+
++ (RCCContentData*)survivorResourceContent
+{
+    RCCContentData *data = [self contentFrom:kSurvivorResourceFileName];
+    data.contentType = kContentTypeSurvivorResource;
+    return data;
+}
+
++ (RCCContentItem *)appContentFromKey:(NSString *)key
 {
     NSDictionary *info = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"ContentAppInformation"
                                                                                                     ofType:@"plist"]];
     NSDictionary *data = info[key];
     if(data != nil) {
-        RCCContentData *item = [[RCCContentData alloc] init];
+        RCCContentItem *item = [[RCCContentItem alloc] init];
         item.title = data[@"title"];
         item.content = data[@"content"];
         return item;
@@ -68,58 +90,64 @@ static NSString * const kContentURLString = @"http://rita.nz/rcc/output.json";
 
 - (void)updateContent
 {
-    NSUserDefaults *defs = [NSUserDefaults standardUserDefaults];
-    NSURL *contentURL = [NSURL URLWithString:kContentURLString];
     __weak typeof(self)weakSelf = self;
     NSFileManager *fm = [NSFileManager defaultManager];
-    NSString *path = [[RCCContentProvider contentFolder] stringByAppendingPathComponent:kContentFileName];
-    __block NSDate *lastUpdate = [defs objectForKey:@"LastUpdate"];
-    void(^downloadBlock)(NSURL *url)= ^(NSURL *url) {
-        [weakSelf downloadContent:contentURL
+
+    void(^downloadBlock)(NSURL *, NSDate *)= ^(NSURL *url, NSDate *lastModification) {
+        [weakSelf downloadContent:url
                        completion:^(NSData *contentData, NSError *error) {
-                           NSLog(@"Download!!!");
                            if((error == nil) && (contentData != nil)){
+                               NSString *path = [[RCCContentProvider contentFolder] stringByAppendingPathComponent:[url lastPathComponent]];
                                [fm removeItemAtPath:path
                                               error:nil];
                                [contentData writeToFile:path
                                              atomically:YES];
-                               [defs setObject:lastUpdate
-                                        forKey:@"LastUpdate"];
-                               [defs synchronize];
+                               [fm setAttributes:@{NSFileModificationDate : lastModification}
+                                    ofItemAtPath:path
+                                           error:nil];
                            }
                        }];
     };
-    [self checkLastUpdate:contentURL
-               completion:^(NSDate *lastModification, NSError *error) {
-                   NSLog(@"Check");
-                   if((lastUpdate == nil) || [lastModification compare:lastUpdate] == NSOrderedDescending) {
-                       downloadBlock(contentURL);
-                   }
-                   lastUpdate = lastModification;
-               }];
+    NSArray *files = @[kAdvocateTrainingFileName, kAdvocateResourceFileName, kSurvivorResourceFileName];
+    for(NSString *file in files) {
+        NSURL *contentURL = [NSURL URLWithString:kContentURLString];
+        contentURL = [contentURL URLByAppendingPathComponent:file];
+        [self checkLastUpdate:contentURL
+                   completion:^(NSDate *lastModification, NSError *error) {
+                       NSString *path = [[RCCContentProvider contentFolder] stringByAppendingPathComponent:file];
+                       NSDate *lastUpdate = [fm attributesOfItemAtPath:path
+                                                                 error:nil][NSFileModificationDate];
+                       if((lastUpdate == nil) || [lastModification compare:lastUpdate] == NSOrderedDescending) {
+                           downloadBlock(contentURL, lastModification);
+                       }
+                   }];
+    }
 }
 
 #pragma mark - private methods
 
-+ (NSArray<RCCContentData *> *)parseJSONContent:(NSData *)jsonData
++ (RCCContentData* )parseJSONContent:(NSData *)jsonData
 {
     NSDictionary *jsonDict = [NSJSONSerialization JSONObjectWithData:jsonData
                                                              options:0
                                                                error:nil];
-    NSArray *contentItems = jsonDict[@"curriculum"][@"content"];
-    return [self recursiveParseContent:contentItems
-                               parrent:nil
-                                 level:0];
+    NSArray<RCCContentItem *> *contentItems = [self recursiveParseContent:jsonDict[@"curriculum"][@"content"]
+                                                                  parrent:nil
+                                                                    level:0];
+    RCCContentData *data = [[RCCContentData alloc] init];
+    data.items = contentItems;
+    data.title = jsonDict[@"curriculum"][@"title"];
+    return data;
 }
 
-+ (NSArray<RCCContentData *> *)recursiveParseContent:(NSArray<NSDictionary *> *)contentItems
-                                             parrent:(RCCContentData *)parrent
++ (NSArray<RCCContentItem *> *)recursiveParseContent:(NSArray<NSDictionary *> *)contentItems
+                                             parrent:(RCCContentItem *)parrent
                                                level:(NSInteger)level
 {
     NSMutableArray *items = [NSMutableArray new];
-    RCCContentData *prev = parrent;
+    RCCContentItem *prev = parrent;
     for(NSDictionary *itemDict in contentItems) {
-        RCCContentData *item = [[RCCContentData alloc] init];
+        RCCContentItem *item = [[RCCContentItem alloc] init];
         prev.nextItem = item;
         item.title = itemDict[@"title"];
         item.content = itemDict[@"content"];
@@ -147,7 +175,7 @@ static NSString * const kContentURLString = @"http://rita.nz/rcc/output.json";
 
 + (NSString *)contentFolder
 {
-    return [NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES).firstObject stringByAppendingString:@"Content"];
+    return [NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES).firstObject stringByAppendingPathComponent:@"Content"];
 }
 
 - (void)checkLastUpdate:(NSURL *)url

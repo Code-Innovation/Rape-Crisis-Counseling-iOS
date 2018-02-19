@@ -24,10 +24,10 @@
     self.tableView.dataSource = self.dataSource;
 }
 
-- (void)setContentItems:(NSArray<RCCContentData *> *)contentItems
+- (void)setContentData:(RCCContentData *)contentData
 {
-    _contentItems = contentItems;
-    self.dataSource = [[RCCContentListDataSource alloc] initWithContentData:contentItems];
+    _contentData = contentData;
+    self.dataSource = [[RCCContentListDataSource alloc] initWithContentData:contentData];
     self.tableView.dataSource = self.dataSource;
     [self.tableView reloadData];
 }

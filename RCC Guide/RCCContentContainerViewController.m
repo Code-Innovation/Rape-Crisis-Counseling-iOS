@@ -24,8 +24,8 @@
     self.titleLabel.text = self.title;
     if([segue.destinationViewController isKindOfClass:[RCCContentSideMenuViewController class]]) {
         self.sideMenuViewController = (RCCContentSideMenuViewController *)segue.destinationViewController;
-        self.sideMenuViewController.contentItems = self.contentItems;
-        self.sideMenuViewController.currentContent = self.currentContent;
+        self.sideMenuViewController.contentData = self.contentData;
+        self.sideMenuViewController.currentItem = self.currentItem;
     }
 }
 

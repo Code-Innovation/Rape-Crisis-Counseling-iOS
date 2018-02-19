@@ -45,7 +45,7 @@
                      forState:UIControlStateNormal];
 }
 
-- (void)setCurrentContent:(RCCContentData *)currentContent
+- (void)setCurrentContent:(RCCContentItem *)currentContent
 {
     _currentContent = currentContent;
     [self updateContent];
@@ -66,7 +66,7 @@
     [self updateNextPrevButton];
     
     NSString *topTitle = nil;
-    RCCContentData *topItem = self.currentContent;
+    RCCContentItem *topItem = self.currentContent;
     do{
         topTitle = topItem.title;
         topItem = topItem.parrent;

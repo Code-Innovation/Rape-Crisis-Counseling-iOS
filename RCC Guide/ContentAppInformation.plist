@@ -42,5 +42,19 @@
 		<key>content</key>
 		<string>This is a training primer for volunteer advocates who want to support survivors of sexual assault and intimate partner violence at health centers in their communities</string>
 	</dict>
+	<key>survivor_resource</key>
+	<dict>
+		<key>title</key>
+		<string>Resource for Survivors</string>
+		<key>content</key>
+		<string></string>
+	</dict>
+	<key>advocate_resource</key>
+	<dict>
+		<key>title</key>
+		<string>Resource for Advocates</string>
+		<key>content</key>
+		<string></string>
+	</dict>
 </dict>
 </plist>

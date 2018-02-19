@@ -12,6 +12,7 @@
 #import "RCCContentContainerViewController.h"
 #import "UIFont+RCCApp.h"
 #import "RCCStaticContentViewController.h"
+#import "RCCTypes.h"
 
 @interface RCCContentMainMenuViewController ()
 
@@ -19,9 +20,9 @@
 @property (nonatomic, weak) IBOutlet UIButton *importantButton;
 @property (nonatomic, weak) IBOutlet UILabel *titleLabel;
 @property (nonatomic, weak) IBOutlet UILabel *contentLabel;
+@property (nonatomic, strong) IBOutlet NSLayoutConstraint *importantButtonConstraint;
 @property (nonatomic, strong) NSMutableArray<UIButton *> *menuButtons;
-@property (nonatomic, strong) NSArray<RCCContentData *> *contentItems;
-@property (nonatomic, strong) RCCContentData *selectedItem;
+@property (nonatomic, strong) RCCContentItem *selectedItem;
 @property (nonatomic, weak) RCCContentContainerViewController *containerViewController;
 
 @end
@@ -35,13 +36,10 @@
 
 - (void)updateUI
 {
-    self.contentItems = nil;
-    RCCContentData *info = [RCCContentProvider appContentFromKey:self.contentType];
+    RCCContentItem *info = [RCCContentProvider appContentFromKey:self.contentData.contentType];
     self.titleLabel.text = info.title;
     self.contentLabel.text = info.content;
-    if([self.contentType isEqualToString:@"advocate_training"]){
-        self.contentItems = [RCCContentProvider advocateTrainingContent];
-    }
+    self.importantButtonConstraint.active = [self.contentData.contentType isEqualToString:kContentTypeAdvocateTraining];
     [self configureMenuButtons];
 }
 
@@ -51,14 +49,12 @@
                     sender:sender];
     if([segue.destinationViewController isKindOfClass:[RCCContentContainerViewController class]]) {
         RCCContentContainerViewController *ctrl= (RCCContentContainerViewController *)segue.destinationViewController;
-        ctrl.contentItems = self.contentItems;
-        ctrl.currentContent = self.selectedItem;
-        if([self.contentType isEqualToString:@"advocate_training"]) {
-            ctrl.title = @"Volunteer Advocate Training";
-        }
+        ctrl.contentData = self.contentData;
+        ctrl.currentItem = self.selectedItem;
+        ctrl.title = self.contentData.title;
     }
     if([segue.destinationViewController isKindOfClass:[RCCStaticContentViewController class]]) {
-        ((RCCStaticContentViewController *)segue.destinationViewController).contentData = [RCCContentProvider appContentFromKey:@"important"];
+        ((RCCStaticContentViewController *)segue.destinationViewController).contentItem = [RCCContentProvider appContentFromKey:@"important"];
     }
 }
 
@@ -71,7 +67,7 @@
 {
     NSUInteger index = [self.menuButtons indexOfObject:sender];
     if(index != NSNotFound) {
-        self.selectedItem = self.contentItems[index];
+        self.selectedItem = self.contentData.items[index];
     } else {
         self.selectedItem = nil;
     }
@@ -85,7 +81,7 @@
     [self.menuButtons makeObjectsPerformSelector:@selector(removeFromSuperview)];
     self.menuButtons = [NSMutableArray new];
     UIButton *prevButton = nil;
-    for(RCCContentData *item in self.contentItems) {
+    for(RCCContentData *item in self.contentData.items) {
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
         button.translatesAutoresizingMaskIntoConstraints = NO;
         [self.menuButtonContainer addSubview:button];
@@ -129,7 +125,7 @@
                                                                                 toItem:self.menuButtons.lastObject
                                                                              attribute:NSLayoutAttributeBottom
                                                                             multiplier:1.0
-                                                                              constant:space]];
+                                                                              constant:0.0]];
     }
     
 }

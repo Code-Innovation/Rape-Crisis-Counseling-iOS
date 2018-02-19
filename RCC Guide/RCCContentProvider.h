@@ -14,8 +14,12 @@
 
 - (void)updateContent;
 
-+ (NSArray<RCCContentData *> *)advocateTrainingContent;
++ (RCCContentData*)advocateTrainingContent;
+    
++ (RCCContentData*)advocateResourceContent;
 
-+ (RCCContentData *)appContentFromKey:(NSString *)key;
++ (RCCContentData*)survivorResourceContent;
+
++ (RCCContentItem *)appContentFromKey:(NSString *)key;
 
 @end
