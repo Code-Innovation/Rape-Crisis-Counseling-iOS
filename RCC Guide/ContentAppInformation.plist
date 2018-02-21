@@ -15,15 +15,16 @@
 		<key>title</key>
 		<string>About</string>
 		<key>content</key>
-		<string>&lt;p&gt;This is a free and open source resource created by Code Innovation in partnership with the Washington DC Rape Crisis Center&lt;/p&gt;
+		<string>&lt;p&gt;This is a free and open source resource created by Code Innovation in partnership with the Washington DC Rape Crisis Center(&lt;a href=\&apos;http://dcrcc.org\&apos;&gt;(http://dcrcc.org)&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;We want to thank our partners, including:&lt;/p&gt;
-&lt;p&gt;Free Women Writers (&lt;a href=\&apos;http://www.freewomenwriters.org/\&apos;&gt;www.freewomenwriters.org&lt;/a&gt;)&lt;br&gt;Megan Nobert, Founder and Former Director of Report the Abuse&lt;br&gt;Tanya Roussopoulos Williams, Women&apos;s Human Rights Consultant, London&lt;/p&gt;
-&lt;p&gt;Thanks also to the generous support of our crowdfunders and donors. This resource would not be possible without you!&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Ambassadors&lt;/strong&gt;&lt;br&gt;Imago Dei Foundation&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Advocates&lt;/strong&gt; &lt;br&gt;Namaste Foundation &lt;br&gt;Yen Yang Lim&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Supporters&lt;/strong&gt;&lt;br&gt;Sam &amp;amp; Sybil Williams &lt;br&gt;Caroline L. Martin &lt;br&gt;George Losleben &lt;br&gt;Connie Johnson&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Contributors&lt;/strong&gt;&lt;br&gt;Ali Neely&lt;br&gt;Regina Njima &lt;br&gt;Nell Watson &lt;br&gt;Emilia Lahti &lt;br&gt;Tania Campbell &lt;br&gt;Peter Lacey &amp;amp; Meg Hess&lt;br&gt;Genevieve Frances &lt;br&gt;Victor Udoewa &lt;br&gt;Elizabeth Klinger &lt;br&gt;Janaina Pinto &lt;br&gt;Jennifer Townsend &lt;br&gt;Kim Marie Nicols &amp;amp; Clifford Hayden&lt;br&gt;Landis Wyatt &lt;br&gt;Brenda Wrobel &lt;br&gt;Chid Liberty &lt;br&gt;Nellie Johnson&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;For more information, please visit us at &lt;a href=\&apos;http://rapecrisiscounseling.org\&apos;&gt;rapecrisiscounseling.org&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;</string>
+&lt;p&gt;Rita Langley&lt;br&gt;Free Women Writers (&lt;a href=\&apos;http://www.freewomenwriters.org/\&apos;&gt;www.freewomenwriters.org&lt;/a&gt;)&lt;br&gt;Megan Nobert, Founder and Former Director of Report the Abuse&lt;br&gt;Tanya Roussopoulos Williams, Women&apos;s Human Rights Consultant, London&lt;/p&gt;
+                       &lt;p&gt;Thanks also to the generous support of our crowdfunders and donors. This resource would not be possible without you!&lt;/p&gt;
+                       &lt;p&gt;&lt;strong&gt;Ambassadors&lt;/strong&gt;&lt;br&gt;Imago Dei Foundation&lt;/p&gt;
+                       &lt;p&gt;&lt;strong&gt;Advocates&lt;/strong&gt; &lt;br&gt;Namaste Foundation &lt;br&gt;Yen Yang Lim&lt;/p&gt;
+                       &lt;p&gt;&lt;strong&gt;Supporters&lt;/strong&gt;&lt;br&gt;Sam &amp;amp; Sybil Williams &lt;br&gt;Caroline L. Martin &lt;br&gt;George Losleben &lt;br&gt;Connie Johnson&lt;/p&gt;
+                       &lt;p&gt;&lt;strong&gt;Contributors&lt;/strong&gt;&lt;br&gt;Ali Neely&lt;br&gt;Regina Njima &lt;br&gt;Nell Watson &lt;br&gt;Emilia Lahti &lt;br&gt;Tania Campbell &lt;br&gt;Peter Lacey &amp;amp; Meg Hess&lt;br&gt;Genevieve Frances &lt;br&gt;Victor Udoewa &lt;br&gt;Elizabeth Klinger &lt;br&gt;Janaina Pinto &lt;br&gt;Jennifer Townsend &lt;br&gt;Kim Marie Nicols &amp;amp; Clifford Hayden&lt;br&gt;Landis Wyatt &lt;br&gt;Brenda Wrobel &lt;br&gt;Chid Liberty &lt;br&gt;Nellie Johnson&lt;/p&gt;
+                       &lt;p&gt;&lt;em&gt;For more information, please visit us at &lt;a href=\&apos;http://rapecrisiscounseling.org\&apos;&gt;rapecrisiscounseling.org&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
+</string>
 	</dict>
 	<key>important</key>
 	<dict>

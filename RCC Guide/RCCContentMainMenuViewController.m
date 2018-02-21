@@ -37,7 +37,7 @@
 - (void)updateUI
 {
     RCCContentItem *info = [RCCContentProvider appContentFromKey:self.contentData.contentType];
-    self.titleLabel.text = info.title;
+    self.titleLabel.text = self.contentData.title;
     self.contentLabel.text = info.content;
     self.importantButtonConstraint.active = [self.contentData.contentType isEqualToString:kContentTypeAdvocateTraining];
     [self configureMenuButtons];

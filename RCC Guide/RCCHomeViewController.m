@@ -14,12 +14,22 @@
 
 @property (nonatomic, strong) RCCContentData *contenData;
 
+@property (nonatomic, weak) IBOutlet UIButton *advocateTrainingButton;
+@property (nonatomic, weak) IBOutlet UIButton *advocateResourceButton;
+@property (nonatomic, weak) IBOutlet UIButton *survivorResourceButton;
+
 @end
 
 @implementation RCCHomeViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self.advocateTrainingButton setTitle:[RCCContentProvider advocateTrainingContent].title
+                                 forState:UIControlStateNormal];
+    [self.advocateResourceButton setTitle:[RCCContentProvider advocateResourceContent].title
+                                 forState:UIControlStateNormal];
+    [self.survivorResourceButton setTitle:[RCCContentProvider survivorResourceContent].title
+                                 forState:UIControlStateNormal];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

@@ -8,6 +8,8 @@
 
 #import "RCCAppMenuViewController.h"
 #import "RCCAppMenuDataSource.h"
+#import "RCCTypes.h"
+#import "RCCContentProvider.h"
 
 @interface RCCAppMenuViewController ()<UITableViewDelegate>
 
@@ -24,8 +26,39 @@
     
     NSArray *menuData = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"AppMenu"
                                                                                          ofType:@"plist"]];
+    
     self.dataSource = [[RCCAppMenuDataSource alloc] initWithData:menuData];
     self.tableView.dataSource = self.dataSource;
+    [self updateMenu];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(updateMenu)
+                                                 name:kContentUpdateNotification
+                                               object:nil];
+}
+
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:kContentUpdateNotification
+                                                  object:nil];
+}
+
+- (void)updateMenu
+{
+    for(NSInteger i = 0; i < [self.dataSource numberOfSectionsInTableView:self.tableView]; i ++) {
+        for(NSInteger j = 0; j < [self.dataSource tableView:self.tableView numberOfRowsInSection:i]; j ++) {
+            RCCAppMenuItem *item = [self.dataSource itemAtIndexPath:[NSIndexPath indexPathForRow:j
+                                                                                       inSection:i]];
+            if([item.action isEqualToString:kContentTypeAdvocateResource]) {
+                item.title = [RCCContentProvider advocateResourceContent].title;
+            } else if([item.action isEqualToString:kContentTypeSurvivorResource]) {
+                item.title = [RCCContentProvider survivorResourceContent].title;
+            } else if([item.action isEqualToString:kContentTypeAdvocateTraining]) {
+                item.title = [RCCContentProvider advocateTrainingContent].title;
+            }
+        }
+    }
+    [self.tableView reloadData];
 }
 
 #pragma mark - UITableViewDelegate

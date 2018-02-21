@@ -45,14 +45,6 @@
 			<key>action</key>
 			<string>about</string>
 		</dict>
-		<dict>
-			<key>enabled</key>
-			<false/>
-			<key>title</key>
-			<string>Settings</string>
-			<key>action</key>
-			<string>settings</string>
-		</dict>
 	</array>
 	<array>
 		<dict>

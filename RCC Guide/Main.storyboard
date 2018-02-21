@@ -166,6 +166,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="IaR-Pi-xSz"/>
                     <connections>
+                        <outlet property="advocateResourceButton" destination="CfG-Lg-eBE" id="MZX-TL-NFp"/>
+                        <outlet property="advocateTrainingButton" destination="ijR-Yd-oN6" id="8cv-7N-rHh"/>
+                        <outlet property="survivorResourceButton" destination="usv-sj-CBi" id="nX2-oI-BO9"/>
                         <segue destination="W89-al-YKx" kind="show" identifier="HomeContentSegue" id="LrQ-8o-Jzz"/>
                     </connections>
                 </viewController>

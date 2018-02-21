@@ -650,7 +650,7 @@
 				INFOPLIST_FILE = "RCC Guide/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "rape-crisis-counseling-platform";
+				PRODUCT_BUNDLE_IDENTIFIER = CodeInnovation.RapeCrisisCounseling.com;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "086a8c07-0d34-4a97-b809-bfbc8ebdbe61";
 				PROVISIONING_PROFILE_SPECIFIER = Hirerussians_Generic_Development;
@@ -670,10 +670,10 @@
 				INFOPLIST_FILE = "RCC Guide/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "rape-crisis-counseling-platform";
+				PRODUCT_BUNDLE_IDENTIFIER = CodeInnovation.RapeCrisisCounseling.com;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "02a7457b-4749-43f8-ada5-e6fada380011";
-				PROVISIONING_PROFILE_SPECIFIER = "Rape Crisis Counseling";
+				PROVISIONING_PROFILE = "27cb0340-328c-4033-bd0f-c78a0a20e4a9";
+				PROVISIONING_PROFILE_SPECIFIER = CodeInnovation_RapeCrisisCounseling_AppStore;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
