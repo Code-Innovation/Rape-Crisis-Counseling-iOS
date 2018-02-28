@@ -11,6 +11,7 @@
 		29063F412033F66200C8A8AF /* RCCStaticContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29063F402033F66200C8A8AF /* RCCStaticContentViewController.m */; };
 		290D38E3203164AE009D6919 /* RCCContentContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 290D38E2203164AE009D6919 /* RCCContentContainerViewController.m */; };
 		290D38E820316557009D6919 /* RCCContentSideMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 290D38E720316557009D6919 /* RCCContentSideMenuViewController.m */; };
+		290D751220467C0F00348645 /* RCC Terms of Use Draft FINAL.doc in Resources */ = {isa = PBXBuildFile; fileRef = 290D751020467C0E00348645 /* RCC Terms of Use Draft FINAL.doc */; };
 		291EA3F1202DC40F0060A98A /* ContentAppInformation.plist in Resources */ = {isa = PBXBuildFile; fileRef = 291EA3F0202DC40E0060A98A /* ContentAppInformation.plist */; };
 		293920472032EBAC002B33CF /* RCCTextDecorator.m in Sources */ = {isa = PBXBuildFile; fileRef = 293920462032EBAC002B33CF /* RCCTextDecorator.m */; };
 		299E025C2032060300646CFC /* RCCHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 299E025B2032060300646CFC /* RCCHomeViewController.m */; };
@@ -49,6 +50,7 @@
 		290D38E2203164AE009D6919 /* RCCContentContainerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RCCContentContainerViewController.m; sourceTree = "<group>"; };
 		290D38E620316557009D6919 /* RCCContentSideMenuViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCCContentSideMenuViewController.h; sourceTree = "<group>"; };
 		290D38E720316557009D6919 /* RCCContentSideMenuViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RCCContentSideMenuViewController.m; sourceTree = "<group>"; };
+		290D751020467C0E00348645 /* RCC Terms of Use Draft FINAL.doc */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RCC Terms of Use Draft FINAL.doc"; sourceTree = "<group>"; };
 		291EA3F0202DC40E0060A98A /* ContentAppInformation.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ContentAppInformation.plist; sourceTree = "<group>"; };
 		293920452032EBAC002B33CF /* RCCTextDecorator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCCTextDecorator.h; sourceTree = "<group>"; };
 		293920462032EBAC002B33CF /* RCCTextDecorator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RCCTextDecorator.m; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 		299E0254202A37BA00646CFC /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				290D751020467C0E00348645 /* RCC Terms of Use Draft FINAL.doc */,
 				29F7CFFD202D685300B75900 /* advocate-training.json */,
 				29EFF098203ABAB000E25B06 /* advocate-resource.json */,
 				29EFF099203ABAB000E25B06 /* survivor-resource.json */,
@@ -427,6 +430,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				290D751220467C0F00348645 /* RCC Terms of Use Draft FINAL.doc in Resources */,
 				29C57BC5202C1FCD00BEF614 /* AppMenu.plist in Resources */,
 				29C432A22029DF16009EC2CF /* NotoSans-Regular.ttf in Resources */,
 				29F7CFFE202D685300B75900 /* advocate-training.json in Resources */,

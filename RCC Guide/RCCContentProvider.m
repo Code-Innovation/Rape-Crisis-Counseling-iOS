@@ -106,9 +106,11 @@ static NSString * const kContentURLString = @"https://s3-us-west-2.amazonaws.com
                                               error:nil];
                                [contentData writeToFile:path
                                              atomically:YES];
-                               [fm setAttributes:@{NSFileModificationDate : lastModification}
-                                    ofItemAtPath:path
-                                           error:nil];
+                               if(lastModification != nil) {
+                                   [fm setAttributes:@{NSFileModificationDate : lastModification}
+                                        ofItemAtPath:path
+                                               error:nil];
+                               }
                                if(downloadCount == 0) {
                                    dispatch_async(dispatch_get_main_queue(), ^{
                                        [[NSNotificationCenter defaultCenter] postNotificationName:kContentUpdateNotification

@@ -134,7 +134,7 @@
                 didSelectItem:(RCCAppMenuItem *)item
 {
     [self hideRightViewAnimated];
-    if([@[@"resources" , @"about"] containsObject:item.action]) {
+    if([@[@"resources" , @"about", @"privacy", @"terms"] containsObject:item.action]) {
         [self showInfoContent:item.action];
     }
     if([@[kContentTypeAdvocateTraining, kContentTypeAdvocateResource, kContentTypeSurvivorResource] containsObject:item.action]) {
