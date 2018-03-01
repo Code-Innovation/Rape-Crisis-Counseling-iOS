@@ -90,6 +90,12 @@
     self.contentNavigationController.viewControllers = @[ctrl];
 }
 
+- (IBAction)homeClick:(id)sender
+{
+    UIViewController *ctrl =[[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"RCCHomeViewController"];
+    self.contentNavigationController.viewControllers = @[ctrl];
+}
+
 - (void)updateContent:(NSNotification *)notif
 {
     UIViewController *ctrl = [[UIStoryboard storyboardWithName:@"Main"
@@ -121,9 +127,14 @@
                    action:@selector(rightMenuClick:)
          forControlEvents:UIControlEventTouchUpInside];
         viewController.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
-        UIImageView *iconView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logo_pic"]];
-        iconView.contentMode = UIViewContentModeScaleAspectFit;
-        viewController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:iconView];
+        UIButton *homeButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [homeButton setImage:[UIImage imageNamed:@"logo_pic"]
+                    forState:UIControlStateNormal];
+        [homeButton sizeToFit];
+        viewController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:homeButton];
+        [homeButton addTarget:self
+                   action:@selector(homeClick:)
+         forControlEvents:UIControlEventTouchUpInside];
         viewController.title = @"RCC Guide";
     }
 }

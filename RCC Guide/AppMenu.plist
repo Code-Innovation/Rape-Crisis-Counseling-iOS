@@ -7,17 +7,17 @@
 			<key>enabled</key>
 			<true/>
 			<key>title</key>
-			<string>In-Hand Resource for Advocates</string>
+			<string>In-Hand Resource for Survivors</string>
 			<key>action</key>
-			<string>advocate_resource</string>
+			<string>survivor_resource</string>
 		</dict>
 		<dict>
 			<key>enabled</key>
 			<true/>
 			<key>title</key>
-			<string>In-Hand Resource for Survivors</string>
+			<string>In-Hand Resource for Advocates</string>
 			<key>action</key>
-			<string>survivor_resource</string>
+			<string>advocate_resource</string>
 		</dict>
 		<dict>
 			<key>enabled</key>
@@ -51,17 +51,9 @@
 			<key>enabled</key>
 			<true/>
 			<key>title</key>
-			<string>Privavy Policy</string>
+			<string>Privaсy Policy</string>
 			<key>action</key>
 			<string>privacy</string>
-		</dict>
-		<dict>
-			<key>enabled</key>
-			<false/>
-			<key>title</key>
-			<string>Disclaimer</string>
-			<key>action</key>
-			<string>disclaimer</string>
 		</dict>
 		<dict>
 			<key>enabled</key>
