@@ -11,16 +11,13 @@
 #import "RCCContentProvider.h"
 #import "RCCContentContainerViewController.h"
 #import "UIFont+RCCApp.h"
-#import "RCCStaticContentViewController.h"
 #import "RCCTypes.h"
 
 @interface RCCContentMainMenuViewController ()
 
 @property (nonatomic, weak) IBOutlet UIView *menuButtonContainer;
-@property (nonatomic, weak) IBOutlet UIButton *importantButton;
 @property (nonatomic, weak) IBOutlet UILabel *titleLabel;
 @property (nonatomic, weak) IBOutlet UILabel *contentLabel;
-@property (nonatomic, strong) IBOutlet NSLayoutConstraint *importantButtonConstraint;
 @property (nonatomic, strong) NSMutableArray<UIButton *> *menuButtons;
 @property (nonatomic, strong) RCCContentItem *selectedItem;
 @property (nonatomic, weak) RCCContentContainerViewController *containerViewController;
@@ -39,7 +36,6 @@
     RCCContentItem *info = [RCCContentProvider appContentFromKey:self.contentData.contentType];
     self.titleLabel.text = self.contentData.title;
     self.contentLabel.text = info.content;
-    self.importantButtonConstraint.active = [self.contentData.contentType isEqualToString:kContentTypeAdvocateTraining];
     [self configureMenuButtons];
 }
 
@@ -52,9 +48,6 @@
         ctrl.contentData = self.contentData;
         ctrl.currentItem = self.selectedItem;
         ctrl.title = self.contentData.title;
-    }
-    if([segue.destinationViewController isKindOfClass:[RCCStaticContentViewController class]]) {
-        ((RCCStaticContentViewController *)segue.destinationViewController).contentItem = [RCCContentProvider appContentFromKey:@"important"];
     }
 }
 
@@ -115,10 +108,10 @@
         [self.menuButtonContainer addConstraint:[NSLayoutConstraint constraintWithItem:self.menuButtons.firstObject
                                                                              attribute:NSLayoutAttributeTop
                                                                              relatedBy:NSLayoutRelationEqual
-                                                                                toItem:self.importantButton
-                                                                             attribute:NSLayoutAttributeBottom
+                                                                                toItem:self.menuButtonContainer
+                                                                             attribute:NSLayoutAttributeTop
                                                                             multiplier:1.0
-                                                                              constant:space]];
+                                                                              constant:0.0]];
         [self.menuButtonContainer addConstraint:[NSLayoutConstraint constraintWithItem:self.menuButtonContainer
                                                                              attribute:NSLayoutAttributeBottom
                                                                              relatedBy:NSLayoutRelationEqual

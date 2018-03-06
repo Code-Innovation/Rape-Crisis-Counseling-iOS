@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
-        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -174,90 +173,6 @@
             </objects>
             <point key="canvasLocation" x="1416" y="-1034"/>
         </scene>
-        <!--Static Content View Controller-->
-        <scene sceneID="oqt-Gw-hFB">
-            <objects>
-                <viewController id="Eiu-Cf-65M" customClass="RCCStaticContentViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Unl-s7-sBJ">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DsB-DE-Lwo">
-                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yop-x6-jc2">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
-                                        <subviews>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="Content" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="nEQ-re-yCR">
-                                                <rect key="frame" x="25" y="20" width="270" height="39"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                            </textView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gth-Ij-gr9">
-                                                <rect key="frame" x="30" y="79" width="260" height="69"/>
-                                                <state key="normal" image="arrow_back" backgroundImage="green_button"/>
-                                                <state key="highlighted" backgroundImage="green_button_press"/>
-                                                <connections>
-                                                    <segue destination="zyF-Ka-fvT" kind="unwind" animates="NO" unwindAction="menuUnwindSegue:" id="HPe-pv-cm1"/>
-                                                </connections>
-                                            </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Back" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HNl-M7-7gP">
-                                                <rect key="frame" x="90" y="90" width="41" height="23.5"/>
-                                                <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="17"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Main menu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HEx-Ny-5XH">
-                                                <rect key="frame" x="90" y="113.5" width="91" height="23.5"/>
-                                                <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="17"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstItem="nEQ-re-yCR" firstAttribute="top" secondItem="Yop-x6-jc2" secondAttribute="top" constant="20" id="9i6-9t-alY"/>
-                                            <constraint firstItem="HNl-M7-7gP" firstAttribute="bottom" secondItem="Gth-Ij-gr9" secondAttribute="centerY" id="Bh0-Le-vx2"/>
-                                            <constraint firstItem="nEQ-re-yCR" firstAttribute="leading" secondItem="Yop-x6-jc2" secondAttribute="leading" constant="25" id="GkD-wq-Jbk"/>
-                                            <constraint firstItem="HEx-Ny-5XH" firstAttribute="leading" secondItem="HNl-M7-7gP" secondAttribute="leading" id="NnY-LQ-x8z"/>
-                                            <constraint firstItem="Gth-Ij-gr9" firstAttribute="centerX" secondItem="Yop-x6-jc2" secondAttribute="centerX" id="U6A-mz-g7E"/>
-                                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Gth-Ij-gr9" secondAttribute="bottom" constant="20" id="WNy-RY-59r"/>
-                                            <constraint firstItem="HEx-Ny-5XH" firstAttribute="top" secondItem="Gth-Ij-gr9" secondAttribute="centerY" id="Y5W-cc-3D2"/>
-                                            <constraint firstItem="Gth-Ij-gr9" firstAttribute="leading" secondItem="Yop-x6-jc2" secondAttribute="leading" constant="30" id="gGn-d9-fmY"/>
-                                            <constraint firstItem="nEQ-re-yCR" firstAttribute="centerX" secondItem="Yop-x6-jc2" secondAttribute="centerX" id="lZb-Wj-4rk"/>
-                                            <constraint firstItem="HNl-M7-7gP" firstAttribute="leading" secondItem="Gth-Ij-gr9" secondAttribute="leading" constant="60" id="xuc-I7-BGd"/>
-                                            <constraint firstItem="Gth-Ij-gr9" firstAttribute="top" secondItem="nEQ-re-yCR" secondAttribute="bottom" constant="20" id="zTc-6S-5OI"/>
-                                        </constraints>
-                                    </view>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="Yop-x6-jc2" firstAttribute="leading" secondItem="DsB-DE-Lwo" secondAttribute="leading" id="7aZ-gV-jxh"/>
-                                    <constraint firstAttribute="bottom" secondItem="Yop-x6-jc2" secondAttribute="bottom" id="9CI-8u-vFc"/>
-                                    <constraint firstItem="Yop-x6-jc2" firstAttribute="width" secondItem="DsB-DE-Lwo" secondAttribute="width" id="Kfa-s7-3Hf"/>
-                                    <constraint firstItem="Yop-x6-jc2" firstAttribute="height" secondItem="DsB-DE-Lwo" secondAttribute="height" priority="250" id="hlL-9B-MiY"/>
-                                    <constraint firstAttribute="trailing" secondItem="Yop-x6-jc2" secondAttribute="trailing" id="ytc-ek-roJ"/>
-                                    <constraint firstItem="Yop-x6-jc2" firstAttribute="top" secondItem="DsB-DE-Lwo" secondAttribute="top" id="zsL-6b-396"/>
-                                </constraints>
-                            </scrollView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="DsB-DE-Lwo" firstAttribute="leading" secondItem="HmA-2H-ug9" secondAttribute="leading" id="ODB-gt-Goi"/>
-                            <constraint firstItem="HmA-2H-ug9" firstAttribute="bottom" secondItem="DsB-DE-Lwo" secondAttribute="bottom" id="SxB-L8-coU"/>
-                            <constraint firstItem="DsB-DE-Lwo" firstAttribute="top" secondItem="HmA-2H-ug9" secondAttribute="top" id="VMQ-0I-OY6"/>
-                            <constraint firstItem="HmA-2H-ug9" firstAttribute="trailing" secondItem="DsB-DE-Lwo" secondAttribute="trailing" id="aBC-TH-f2q"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="HmA-2H-ug9"/>
-                    </view>
-                    <connections>
-                        <outlet property="textView" destination="nEQ-re-yCR" id="xbm-by-ud6"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="TZQ-T0-XQT" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="zyF-Ka-fvT" userLabel="Exit" sceneMemberID="exit"/>
-            </objects>
-            <point key="canvasLocation" x="-193" y="-1024"/>
-        </scene>
         <!--Content Main Menu View Controller-->
         <scene sceneID="44R-pw-lfU">
             <objects>
@@ -280,23 +195,9 @@
                                             </label>
                                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="66E-B3-hEw">
                                                 <rect key="frame" x="30" y="124.5" width="260" height="39"/>
-                                                <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NQd-N9-rdW">
-                                                        <rect key="frame" x="0.0" y="0.0" width="260" height="39"/>
-                                                        <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="17"/>
-                                                        <state key="normal" title="Important: Read this First" backgroundImage="orange_button_small"/>
-                                                        <connections>
-                                                            <segue destination="Eiu-Cf-65M" kind="show" animates="NO" id="6Wo-4z-gLG"/>
-                                                        </connections>
-                                                    </button>
-                                                </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="bottom" secondItem="NQd-N9-rdW" secondAttribute="bottom" priority="250" id="Hah-Wb-Xcz"/>
-                                                    <constraint firstItem="NQd-N9-rdW" firstAttribute="leading" secondItem="66E-B3-hEw" secondAttribute="leading" id="IKM-R3-5zP"/>
-                                                    <constraint firstItem="NQd-N9-rdW" firstAttribute="bottom" secondItem="66E-B3-hEw" secondAttribute="top" priority="250" id="LhT-cs-Hr0"/>
-                                                    <constraint firstAttribute="trailing" secondItem="NQd-N9-rdW" secondAttribute="trailing" id="P5I-I1-rUA"/>
-                                                    <constraint firstItem="NQd-N9-rdW" firstAttribute="top" secondItem="66E-B3-hEw" secondAttribute="top" id="udg-9o-Zge"/>
+                                                    <constraint firstAttribute="height" priority="250" constant="39" id="z2o-Sh-z4I"/>
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uDS-8o-1hA">
@@ -342,8 +243,6 @@
                     </view>
                     <connections>
                         <outlet property="contentLabel" destination="pOu-ci-10d" id="Mdb-kl-33o"/>
-                        <outlet property="importantButton" destination="NQd-N9-rdW" id="Opo-i0-7ZX"/>
-                        <outlet property="importantButtonConstraint" destination="udg-9o-Zge" id="dVs-5V-nVf"/>
                         <outlet property="menuButtonContainer" destination="66E-B3-hEw" id="N4c-b4-SGk"/>
                         <outlet property="titleLabel" destination="uDS-8o-1hA" id="eUk-7W-viU"/>
                         <segue destination="m7U-kF-cGm" kind="show" identifier="showContent" id="HXZ-fP-gDW"/>
@@ -448,13 +347,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="arrow_back" width="60" height="60"/>
         <image name="arrow_next" width="60" height="60"/>
         <image name="arrow_prev" width="60" height="60"/>
         <image name="dropdown_icon" width="40" height="40"/>
         <image name="green_button" width="30" height="69"/>
-        <image name="green_button_press" width="30" height="69"/>
         <image name="grey_button" width="30" height="69"/>
-        <image name="orange_button_small" width="20" height="39"/>
     </resources>
 </document>
