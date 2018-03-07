@@ -66,8 +66,8 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4KW-3b-3nd">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This app provides support for survivors and their advocates to navigate emergency health care services" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dh5-bc-gg8">
-                                                <rect key="frame" x="30" y="178" width="354" height="77.666666666666686"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This app provides support for survivors and their advocates to navigate emergency health care services." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dh5-bc-gg8">
+                                                <rect key="frame" x="30" y="178" width="354" height="26"/>
                                                 <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="19"/>
                                                 <color key="textColor" red="0.25490196078431371" green="0.25490196078431371" blue="0.25882352941176467" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -76,10 +76,10 @@
                                                 <rect key="frame" x="22.666666666666657" y="20" width="369" height="128"/>
                                             </imageView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VlB-id-jnO">
-                                                <rect key="frame" x="30" y="285.66666666666669" width="354" height="247.00000000000006"/>
+                                                <rect key="frame" x="30" y="234" width="354" height="247"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ijR-Yd-oN6">
-                                                        <rect key="frame" x="0.0" y="177.99999999999994" width="354" height="69"/>
+                                                        <rect key="frame" x="0.0" y="178" width="354" height="69"/>
                                                         <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="17"/>
                                                         <state key="normal" title="Volunteer Advocate Training" backgroundImage="green_button"/>
                                                         <state key="disabled" backgroundImage="grey_button">
